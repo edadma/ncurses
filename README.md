@@ -1,4 +1,4 @@
--scala-native
-=============
+ncurses
+=======
 
-This is a template project for Scala Native.
+*ncurses* provides bindings for the GNU Ncurses library.
