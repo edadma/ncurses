@@ -16,6 +16,7 @@ object LibNCurses {
   def endwin: CInt                                                   = extern
   def vw_printw(win: _win_st, fmt: CString, args: CVarArgList): CInt = extern
   def wmove(win: _win_st, y: CInt, x: CInt): CInt                    = extern
+  def waddnstr(win: _win_st, str: CString, n: CInt): CInt            = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -23,5 +24,7 @@ object LibNCurses {
   def getch: CInt = extern
   @name("ncurses_move")
   def move(y: CInt, x: CInt): CInt = extern
+  @name("ncurses_addstr")
+  def addstr(str: CString): CInt = extern
 
 }
