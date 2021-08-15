@@ -1,7 +1,7 @@
 ncurses
 =======
 
-*ncurses* provides bindings for the GNU Ncurses library.
+*ncurses* provides bindings for the GNU Ncurses library.  This package is not at all complete yet.
 
 Example
 -------
