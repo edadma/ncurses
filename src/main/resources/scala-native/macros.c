@@ -13,5 +13,5 @@ int ncurses_KEY_BACKSPACE() { return KEY_BACKSPACE; }
 int ncurses_KEY_DC() { return KEY_DC; }
 int ncurses_clrtoeol() { return clrtoeol(); }
 int ncurses_clrtobot() { return clrtobot(); }
-int ncurses_getmaxy(_win_st* win) { return getmaxy(win); }
-int ncurses_getmaxx(_win_st* win) { return getmaxx(win); }
+int ncurses_getmaxy(WINDOW* win) { return getmaxy(win); }
+int ncurses_getmaxx(WINDOW* win) { return getmaxx(win); }

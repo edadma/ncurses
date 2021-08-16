@@ -6,22 +6,22 @@ import scala.scalanative.unsafe.{CBool, CInt, CString, CVarArgList, Ptr, extern,
 @extern
 object LibNCurses {
 
-  type _win_st = Ptr[Byte]
+  type WINDOW = Ptr[Byte]
 
-  val stdscr: _win_st = extern
+  val stdscr: WINDOW = extern
 
-  def initscr: Ptr[_win_st]                                          = extern
-  def cbreak: CInt                                                   = extern
-  def raw: CInt                                                      = extern
-  def noecho: CInt                                                   = extern
-  def endwin: CInt                                                   = extern
-  def wgetch(win: _win_st): CInt                                     = extern
-  def vw_printw(win: _win_st, fmt: CString, args: CVarArgList): CInt = extern
-  def wmove(win: _win_st, y: CInt, x: CInt): CInt                    = extern
-  def waddnstr(win: _win_st, str: CString, n: CInt): CInt            = extern
-  def keypad(win: _win_st, bf: CBool): CInt                          = extern
-  def wclrtoeol(win: _win_st): CInt                                  = extern
-  def wclrtobot(win: _win_st): CInt                                  = extern
+  def initscr: Ptr[WINDOW]                                          = extern
+  def cbreak: CInt                                                  = extern
+  def raw: CInt                                                     = extern
+  def noecho: CInt                                                  = extern
+  def endwin: CInt                                                  = extern
+  def wgetch(win: WINDOW): CInt                                     = extern
+  def vw_printw(win: WINDOW, fmt: CString, args: CVarArgList): CInt = extern
+  def wmove(win: WINDOW, y: CInt, x: CInt): CInt                    = extern
+  def waddnstr(win: WINDOW, str: CString, n: CInt): CInt            = extern
+  def keypad(win: WINDOW, bf: CBool): CInt                          = extern
+  def wclrtoeol(win: WINDOW): CInt                                  = extern
+  def wclrtobot(win: WINDOW): CInt                                  = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -50,8 +50,8 @@ object LibNCurses {
   @name("ncurses_clrtobot")
   def clrtobot: CInt = extern
   @name("ncurses_getmaxy")
-  def getmaxy(win: _win_st): CInt = extern
+  def getmaxy(win: WINDOW): CInt = extern
   @name("ncurses_getmaxx")
-  def getmaxx(win: _win_st): CInt = extern
+  def getmaxx(win: WINDOW): CInt = extern
 
 }
