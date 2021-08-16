@@ -49,5 +49,9 @@ object LibNCurses {
   def clrtoeol: CInt = extern
   @name("ncurses_clrtobot")
   def clrtobot: CInt = extern
+  @name("ncurses_getmaxy")
+  def getmaxy(win: _win_st): CInt = extern
+  @name("ncurses_getmaxx")
+  def getmaxx(win: _win_st): CInt = extern
 
 }
