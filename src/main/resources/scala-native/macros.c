@@ -12,3 +12,4 @@ int ncurses_KEY_HOME() { return KEY_HOME; }
 int ncurses_KEY_BACKSPACE() { return KEY_BACKSPACE; }
 int ncurses_KEY_DC() { return KEY_DC; }
 int ncurses_clrtoeol() { return clrtoeol(); }
+int ncurses_clrtobot() { return clrtobot(); }

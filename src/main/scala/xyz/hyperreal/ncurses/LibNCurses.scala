@@ -1,6 +1,7 @@
 package xyz.hyperreal.ncurses
 
 import scala.scalanative.unsafe.{CBool, CInt, CString, CVarArgList, Ptr, extern, link, name}
+
 @link("ncurses")
 @extern
 object LibNCurses {
@@ -14,11 +15,13 @@ object LibNCurses {
   def raw: CInt                                                      = extern
   def noecho: CInt                                                   = extern
   def endwin: CInt                                                   = extern
+  def wgetch(win: _win_st): CInt                                     = extern
   def vw_printw(win: _win_st, fmt: CString, args: CVarArgList): CInt = extern
   def wmove(win: _win_st, y: CInt, x: CInt): CInt                    = extern
   def waddnstr(win: _win_st, str: CString, n: CInt): CInt            = extern
   def keypad(win: _win_st, bf: CBool): CInt                          = extern
   def wclrtoeol(win: _win_st): CInt                                  = extern
+  def wclrtobot(win: _win_st): CInt                                  = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -44,4 +47,7 @@ object LibNCurses {
   def KEY_DC: CInt = extern
   @name("ncurses_clrtoeol")
   def clrtoeol: CInt = extern
+  @name("ncurses_clrtobot")
+  def clrtobot: CInt = extern
+
 }
