@@ -10,6 +10,6 @@ object LibNCursesHelpers {
     nc.vw_printw(win, toCString(fmt), toCVarArgList(args.toSeq))
   }
 
-  def printw(fmt: String, args: CVarArg*): CInt = wprintw(nc.stdscr, fmt, args)
+  def printw(fmt: String, args: CVarArg*): CInt = wprintw(nc.stdscr, fmt, args: _*)
 
 }
