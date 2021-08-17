@@ -15,3 +15,6 @@ int ncurses_clrtoeol() { return clrtoeol(); }
 int ncurses_clrtobot() { return clrtobot(); }
 int ncurses_getmaxy(WINDOW* win) { return getmaxy(win); }
 int ncurses_getmaxx(WINDOW* win) { return getmaxx(win); }
+int ncurses_clear() { return clear(); }
+int ncurses_OK() { return OK; }
+int ncurses_ERR() { return ERR; }

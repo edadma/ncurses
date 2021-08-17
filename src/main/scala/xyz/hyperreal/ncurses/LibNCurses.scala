@@ -24,6 +24,7 @@ object LibNCurses {
   def wclrtobot(win: WINDOW): CInt                                            = extern
   def newwin(nlines: CInt, ncols: CInt, begin_y: CInt, begin_x: CInt): WINDOW = extern
   def delwin(win: WINDOW): CInt                                               = extern
+  def wclear(win: WINDOW): CInt                                               = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -55,5 +56,11 @@ object LibNCurses {
   def getmaxy(win: WINDOW): CInt = extern
   @name("ncurses_getmaxx")
   def getmaxx(win: WINDOW): CInt = extern
+  @name("ncurses_clear")
+  def clear: CInt = extern
+  @name("ncurses_OK")
+  def OK: CInt = extern
+  @name("ncurses_ERR")
+  def ERR: CInt = extern
 
 }
