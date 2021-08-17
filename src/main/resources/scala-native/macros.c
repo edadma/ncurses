@@ -12,6 +12,8 @@ int ncurses_getmaxx(WINDOW* win) { return getmaxx(win); }
 int ncurses_clear() { return clear(); }
 int ncurses_wattron(WINDOW* win, int attr) { return wattron(win, attr); }
 int ncurses_wattroff(WINDOW* win, int attr) { return wattroff(win, attr); }
+int ncurses_attron(int attr) { return attron(attr); }
+int ncurses_attroff(int attr) { return attroff(attr); }
 
 int ncurses_KEY_DOWN() { return KEY_DOWN; }
 int ncurses_KEY_UP() { return KEY_UP; }

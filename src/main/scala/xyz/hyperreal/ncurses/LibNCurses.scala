@@ -68,5 +68,9 @@ object LibNCurses {
   def wattron(win: WINDOW, attr: CInt): CInt = extern
   @name("ncurses_wattroff")
   def wattroff(win: WINDOW, attr: CInt): CInt = extern
+  @name("ncurses_attron")
+  def attron(attr: CInt): CInt = extern
+  @name("ncurses_attroff")
+  def attroff(attr: CInt): CInt = extern
 
 }
