@@ -4,6 +4,7 @@ int ncurses_refresh() { return refresh(); }
 int ncurses_getch() { return getch(); }
 int ncurses_move(int y, int x) { return move(y, x); }
 int ncurses_addstr(char* str) { return addstr(str); }
+int ncurses_waddstr(WINDOW* win, char* str) { return waddstr(win, str); }
 int ncurses_KEY_DOWN() { return KEY_DOWN; }
 int ncurses_KEY_UP() { return KEY_UP; }
 int ncurses_KEY_LEFT() { return KEY_LEFT; }

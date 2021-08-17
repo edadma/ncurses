@@ -34,6 +34,8 @@ object LibNCurses {
   def move(y: CInt, x: CInt): CInt = extern
   @name("ncurses_addstr")
   def addstr(str: CString): CInt = extern
+  @name("ncurses_waddstr")
+  def waddstr(win: WINDOW, str: CString): CInt = extern
   @name("ncurses_KEY_DOWN")
   def KEY_DOWN: CInt = extern
   @name("ncurses_KEY_UP")
