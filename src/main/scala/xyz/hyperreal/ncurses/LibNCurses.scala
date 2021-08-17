@@ -72,5 +72,27 @@ object LibNCurses {
   def attron(attr: CInt): CInt = extern
   @name("ncurses_attroff")
   def attroff(attr: CInt): CInt = extern
+  @name("ncurses_A_NORMAL")
+  def A_NORMAL: CInt = extern
+  @name("ncurses_A_STANDOUT")
+  def A_STANDOUT: CInt = extern
+  @name("ncurses_A_UNDERLINE")
+  def A_UNDERLINE: CInt = extern
+  @name("ncurses_A_REVERSE")
+  def A_REVERSE: CInt = extern
+  @name("ncurses_A_BLINK")
+  def A_BLINK: CInt = extern
+  @name("ncurses_A_DIM")
+  def A_DIM: CInt = extern
+  @name("ncurses_A_BOLD")
+  def A_BOLD: CInt = extern
+  @name("ncurses_A_PROTECT")
+  def A_PROTECT: CInt = extern
+  @name("ncurses_A_INVIS")
+  def A_INVIS: CInt = extern
+  @name("ncurses_A_ALTCHARSET")
+  def A_ALTCHARSET: CInt = extern
+  @name("ncurses_A_CHARTEXT")
+  def A_CHARTEXT: CInt = extern
 
 }

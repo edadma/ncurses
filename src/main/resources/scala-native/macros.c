@@ -25,3 +25,15 @@ int ncurses_KEY_DC() { return KEY_DC; }
 
 int ncurses_OK() { return OK; }
 int ncurses_ERR() { return ERR; }
+
+int ncurses_A_NORMAL() { return A_NORMAL; }
+int ncurses_A_STANDOUT() { return A_STANDOUT; }
+int ncurses_A_UNDERLINE() { return A_UNDERLINE; }
+int ncurses_A_REVERSE() { return A_REVERSE; }
+int ncurses_A_BLINK() { return A_BLINK; }
+int ncurses_A_DIM() { return A_DIM; }
+int ncurses_A_BOLD() { return A_BOLD; }
+int ncurses_A_PROTECT() { return A_PROTECT; }
+int ncurses_A_INVIS() { return A_INVIS; }
+int ncurses_A_ALTCHARSET() { return A_ALTCHARSET; }
+int ncurses_A_CHARTEXT() { return A_CHARTEXT; }
