@@ -23,6 +23,10 @@ int ncurses_KEY_HOME() { return KEY_HOME; }
 int ncurses_KEY_END() { return KEY_END; }
 int ncurses_KEY_BACKSPACE() { return KEY_BACKSPACE; }
 int ncurses_KEY_DC() { return KEY_DC; }
+int ncurses_KEY_PPAGE() { return KEY_PPAGE; }
+int ncurses_KEY_NPAGE() { return KEY_NPAGE; }
+int ncurses_KEY_IC() { return KEY_IC; }
+int ncurses_KEY_STAB() { return KEY_STAB; }
 
 int ncurses_OK() { return OK; }
 int ncurses_ERR() { return ERR; }

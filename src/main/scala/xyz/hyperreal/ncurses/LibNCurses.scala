@@ -54,6 +54,14 @@ object LibNCurses {
   def KEY_BACKSPACE: CInt = extern
   @name("ncurses_KEY_DC")
   def KEY_DC: CInt = extern
+  @name("ncurses_KEY_PPAGE")
+  def KEY_PPAGE: CInt = extern
+  @name("ncurses_KEY_NPAGE")
+  def KEY_NPAGE: CInt = extern
+  @name("ncurses_KEY_IC")
+  def KEY_IC: CInt = extern
+  @name("ncurses_KEY_STAB")
+  def KEY_STAB: CInt = extern
   @name("ncurses_clrtoeol")
   def clrtoeol: CInt = extern
   @name("ncurses_clrtobot")
