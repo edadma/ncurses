@@ -10,18 +10,20 @@ object LibNCurses {
 
   val stdscr: WINDOW = extern
 
-  def initscr: Ptr[WINDOW]                                          = extern
-  def cbreak: CInt                                                  = extern
-  def raw: CInt                                                     = extern
-  def noecho: CInt                                                  = extern
-  def endwin: CInt                                                  = extern
-  def wgetch(win: WINDOW): CInt                                     = extern
-  def vw_printw(win: WINDOW, fmt: CString, args: CVarArgList): CInt = extern
-  def wmove(win: WINDOW, y: CInt, x: CInt): CInt                    = extern
-  def waddnstr(win: WINDOW, str: CString, n: CInt): CInt            = extern
-  def keypad(win: WINDOW, bf: CBool): CInt                          = extern
-  def wclrtoeol(win: WINDOW): CInt                                  = extern
-  def wclrtobot(win: WINDOW): CInt                                  = extern
+  def initscr: Ptr[WINDOW]                                                    = extern
+  def cbreak: CInt                                                            = extern
+  def raw: CInt                                                               = extern
+  def noecho: CInt                                                            = extern
+  def endwin: CInt                                                            = extern
+  def wgetch(win: WINDOW): CInt                                               = extern
+  def vw_printw(win: WINDOW, fmt: CString, args: CVarArgList): CInt           = extern
+  def wmove(win: WINDOW, y: CInt, x: CInt): CInt                              = extern
+  def waddnstr(win: WINDOW, str: CString, n: CInt): CInt                      = extern
+  def keypad(win: WINDOW, bf: CBool): CInt                                    = extern
+  def wclrtoeol(win: WINDOW): CInt                                            = extern
+  def wclrtobot(win: WINDOW): CInt                                            = extern
+  def newwin(nlines: CInt, ncols: CInt, begin_y: CInt, begin_x: CInt): WINDOW = extern
+  def delwin(win: WINDOW): CInt                                               = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
