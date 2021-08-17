@@ -15,6 +15,7 @@ object LibNCurses {
   def raw: CInt                                                               = extern
   def noecho: CInt                                                            = extern
   def endwin: CInt                                                            = extern
+  def start_color: CInt                                                       = extern
   def wgetch(win: WINDOW): CInt                                               = extern
   def vw_printw(win: WINDOW, fmt: CString, args: CVarArgList): CInt           = extern
   def wmove(win: WINDOW, y: CInt, x: CInt): CInt                              = extern
@@ -25,6 +26,7 @@ object LibNCurses {
   def newwin(nlines: CInt, ncols: CInt, begin_y: CInt, begin_x: CInt): WINDOW = extern
   def delwin(win: WINDOW): CInt                                               = extern
   def wclear(win: WINDOW): CInt                                               = extern
+  def wbkgdset(win: WINDOW, chtype: CInt): Unit                               = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
