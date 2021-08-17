@@ -27,6 +27,8 @@ object LibNCurses {
   def delwin(win: WINDOW): CInt                                               = extern
   def wclear(win: WINDOW): CInt                                               = extern
   def wbkgdset(win: WINDOW, chtype: CInt): Unit                               = extern
+  def scrollok(win: WINDOW, bf: CBool): Unit                                  = extern
+  def wscrl(win: WINDOW, n: CInt): Unit                                       = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
