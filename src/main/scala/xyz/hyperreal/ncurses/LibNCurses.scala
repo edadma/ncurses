@@ -48,6 +48,8 @@ object LibNCurses {
   def KEY_RIGHT: CInt = extern
   @name("ncurses_KEY_HOME")
   def KEY_HOME: CInt = extern
+  @name("ncurses_KEY_END")
+  def KEY_END: CInt = extern
   @name("ncurses_KEY_BACKSPACE")
   def KEY_BACKSPACE: CInt = extern
   @name("ncurses_KEY_DC")
