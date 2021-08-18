@@ -29,6 +29,7 @@ object LibNCurses {
   def wbkgdset(win: WINDOW, chtype: CInt): Unit                               = extern
   def scrollok(win: WINDOW, bf: CBool): Unit                                  = extern
   def wscrl(win: WINDOW, n: CInt): Unit                                       = extern
+  def keyname(c: CInt): CString                                               = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
