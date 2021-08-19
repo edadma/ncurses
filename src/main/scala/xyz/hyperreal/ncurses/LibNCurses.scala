@@ -31,6 +31,7 @@ object LibNCurses {
   def wscrl(win: WINDOW, n: CInt): Unit                                       = extern
   def keyname(c: CInt): CString                                               = extern
   def nodelay(win: WINDOW, bf: CBool): Unit                                   = extern
+  def wresize(win: WINDOW, lines: CInt, columns: CInt): Unit                  = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
