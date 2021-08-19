@@ -7,6 +7,7 @@ import scala.scalanative.unsafe.{CBool, CInt, CString, CVarArgList, Ptr, extern,
 object LibNCurses {
 
   type WINDOW = Ptr[Byte]
+  type PANEL  = Ptr[Byte]
 
   val stdscr: WINDOW = extern
 
@@ -32,6 +33,11 @@ object LibNCurses {
   def keyname(c: CInt): CString                                               = extern
   def nodelay(win: WINDOW, bf: CBool): Unit                                   = extern
   def wresize(win: WINDOW, lines: CInt, columns: CInt): Unit                  = extern
+  def new_panel(win: WINDOW): PANEL                                           = extern
+  def panel_above(win: PANEL): PANEL                                          = extern
+  def update_panels(): Unit                                                   = extern
+  def doupdate: CInt                                                          = extern
+  def panel_above(win: PANEL): PANEL                                          = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
