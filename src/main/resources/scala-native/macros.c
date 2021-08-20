@@ -44,3 +44,5 @@ int ncurses_A_PROTECT() { return A_PROTECT; }
 int ncurses_A_INVIS() { return A_INVIS; }
 int ncurses_A_ALTCHARSET() { return A_ALTCHARSET; }
 int ncurses_A_CHARTEXT() { return A_CHARTEXT; }
+
+int ncurses_ACS_VLINE() { return ACS_VLINE; }

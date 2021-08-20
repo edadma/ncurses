@@ -2,6 +2,7 @@ package xyz.hyperreal.ncurses
 
 import scala.scalanative.unsafe.{CBool, CInt, CString, CVarArgList, Ptr, extern, link, name}
 
+@link("panel")
 @link("ncurses")
 @extern
 object LibNCurses {
@@ -37,7 +38,6 @@ object LibNCurses {
   def panel_above(win: PANEL): PANEL                                          = extern
   def update_panels(): Unit                                                   = extern
   def doupdate: CInt                                                          = extern
-  def panel_above(win: PANEL): PANEL                                          = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -121,5 +121,7 @@ object LibNCurses {
   def A_ALTCHARSET: CInt = extern
   @name("ncurses_A_CHARTEXT")
   def A_CHARTEXT: CInt = extern
+  @name("ncurses_ACS_VLINE")
+  def ACS_VLINE: CInt = extern
 
 }
