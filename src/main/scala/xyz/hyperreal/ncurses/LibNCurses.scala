@@ -56,6 +56,8 @@ object LibNCurses {
   def waddstr(win: WINDOW, str: CString): CInt = extern
   @name("ncurses_mvwaddstr")
   def mvwaddstr(win: WINDOW, y: CInt, x: CInt, str: CString): CInt = extern
+  @name("ncurses_addch")
+  def addch(str: chtype): CInt = extern
   @name("ncurses_KEY_DOWN")
   def KEY_DOWN: CInt = extern
   @name("ncurses_KEY_UP")
