@@ -7,6 +7,7 @@ int ncurses_addstr(char* str) { return addstr(str); }
 int ncurses_mvaddstr(int y, int x, char* str) { return mvaddstr(y, x, str); }
 int ncurses_waddstr(WINDOW* win, char* str) { return waddstr(win, str); }
 int ncurses_mvwaddstr(WINDOW* win, int y, int x, char* str) { return mvwaddstr(win, y, x, str); }
+int ncurses_addch(chtype ch) { return waddch(stdscr, ch); }
 int ncurses_clrtoeol() { return clrtoeol(); }
 int ncurses_clrtobot() { return clrtobot(); }
 int ncurses_getmaxy(WINDOW* win) { return getmaxy(win); }

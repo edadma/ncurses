@@ -1,6 +1,7 @@
 package xyz.hyperreal.ncurses
 
 import scala.scalanative.unsafe.{CBool, CInt, CString, CVarArgList, Ptr, extern, link, name}
+import scala.scalanative.unsigned.UInt
 
 @link("panel")
 @link("ncurses")
@@ -9,6 +10,7 @@ object LibNCurses {
 
   type WINDOW = Ptr[Byte]
   type PANEL  = Ptr[Byte]
+  type chtype = UInt
 
   val stdscr: WINDOW = extern
 
@@ -22,6 +24,7 @@ object LibNCurses {
   def vw_printw(win: WINDOW, fmt: CString, args: CVarArgList): CInt           = extern
   def wmove(win: WINDOW, y: CInt, x: CInt): CInt                              = extern
   def waddnstr(win: WINDOW, str: CString, n: CInt): CInt                      = extern
+  def waddch(win: WINDOW, ch: chtype): CInt                                   = extern
   def keypad(win: WINDOW, bf: CBool): CInt                                    = extern
   def wclrtoeol(win: WINDOW): CInt                                            = extern
   def wclrtobot(win: WINDOW): CInt                                            = extern
