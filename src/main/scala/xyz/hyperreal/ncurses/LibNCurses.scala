@@ -127,6 +127,6 @@ object LibNCurses {
   @name("ncurses_A_CHARTEXT")
   def A_CHARTEXT: CInt = extern
   @name("ncurses_ACS_VLINE")
-  def ACS_VLINE: CInt = extern
+  def ACS_VLINE: chtype = extern
 
 }
