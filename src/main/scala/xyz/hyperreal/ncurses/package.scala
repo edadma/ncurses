@@ -27,6 +27,8 @@ package object ncurses {
 
   def endwin: Int = nc.endwin
 
+  def bkgdset(ch: Int): Unit = nc.bkgdset(ch.toUInt)
+
   def start_color: Int = nc.start_color
 
   def addstr(s: String): Int = Zone(implicit z => nc.addstr(toCString(s)))
@@ -48,5 +50,11 @@ package object ncurses {
 
   def newwin(nlines: Int, ncols: Int, begin_y: Int, begin_x: Int): Window =
     new Window(nc.newwin(nlines, ncols, begin_y, begin_x))
+
+  def keyname(c: Int): String = fromCString(nc.keyname(c))
+
+  def update_panels(): Unit = nc.update_panels()
+
+  def doupdate: Int = nc.doupdate
 
 }

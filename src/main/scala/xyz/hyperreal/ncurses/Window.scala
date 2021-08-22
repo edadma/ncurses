@@ -1,7 +1,7 @@
 package xyz.hyperreal.ncurses
 
 import xyz.hyperreal.ncurses.{LibNcurses => nc}
-import nc.WINDOW
+import nc.{PANEL, WINDOW}
 
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
@@ -33,5 +33,25 @@ class Window(val win: WINDOW) extends AnyVal {
   def clrtoeol: Int = nc.wclrtoeol(win)
 
   def clrtobot: Int = nc.wclrtobot(win)
+
+  def delwin: Int = nc.delwin(win)
+
+  def clear: Int = nc.wclear(win)
+
+  def bkgdset(ch: Int): Unit = nc.wbkgdset(win, ch.toUInt)
+
+  def scrollok(bf: Boolean): Unit = nc.scrollok(win, bf)
+
+  def scrl(n: Int): Int = nc.wscrl(win, n)
+
+  def nodelay(bf: Boolean): Unit = nc.nodelay(win, bf)
+
+  def wresize(lines: Int, columns: Int): Unit = nc.wresize(win, lines, columns)
+
+  def new_panel: Panel = new Panel(nc.new_panel(win))
+
+  def getmaxy: Int = nc.getmaxy(win)
+
+  def getmaxx: Int = nc.getmaxx(win)
 
 }

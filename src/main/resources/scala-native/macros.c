@@ -2,6 +2,7 @@
 
 int ncurses_refresh() { return refresh(); }
 int ncurses_getch() { return getch(); }
+int ncurses_scrl(int n) { return scrl(n); }
 int ncurses_move(int y, int x) { return move(y, x); }
 int ncurses_addstr(char* str) { return addstr(str); }
 int ncurses_mvaddstr(int y, int x, char* str) { return mvaddstr(y, x, str); }
@@ -17,7 +18,7 @@ int ncurses_wattron(WINDOW* win, int attr) { return wattron(win, attr); }
 int ncurses_wattroff(WINDOW* win, int attr) { return wattroff(win, attr); }
 int ncurses_attron(int attr) { return attron(attr); }
 int ncurses_attroff(int attr) { return attroff(attr); }
-
+void ncurses_bkgdset(chtype ch) { return bkgdset(ch); }
 int ncurses_KEY_DOWN() { return KEY_DOWN; }
 int ncurses_KEY_UP() { return KEY_UP; }
 int ncurses_KEY_LEFT() { return KEY_LEFT; }

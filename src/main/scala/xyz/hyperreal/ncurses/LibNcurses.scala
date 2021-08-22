@@ -30,14 +30,14 @@ object LibNcurses {
   def newwin(nlines: CInt, ncols: CInt, begin_y: CInt, begin_x: CInt): WINDOW = extern
   def delwin(win: WINDOW): CInt                                               = extern
   def wclear(win: WINDOW): CInt                                               = extern
-  def wbkgdset(win: WINDOW, chtype: CInt): Unit                               = extern
-  def scrollok(win: WINDOW, bf: CBool): Unit                                  = extern
-  def wscrl(win: WINDOW, n: CInt): Unit                                       = extern
+  def wbkgdset(win: WINDOW, ch: chtype): Unit                                 = extern
+  def scrollok(win: WINDOW, bf: CBool): CInt                                  = extern
+  def wscrl(win: WINDOW, n: CInt): CInt                                       = extern
   def keyname(c: CInt): CString                                               = extern
   def nodelay(win: WINDOW, bf: CBool): Unit                                   = extern
   def wresize(win: WINDOW, lines: CInt, columns: CInt): Unit                  = extern
   def new_panel(win: WINDOW): PANEL                                           = extern
-  def panel_above(win: PANEL): PANEL                                          = extern
+  def panel_above(panel: PANEL): PANEL                                        = extern
   def update_panels(): Unit                                                   = extern
   def doupdate: CInt                                                          = extern
 
@@ -45,6 +45,8 @@ object LibNcurses {
   def refresh: CInt = extern
   @name("ncurses_getch")
   def getch: CInt = extern
+  @name("ncurses_scrl")
+  def scrl(n: CInt): CInt = extern
   @name("ncurses_move")
   def move(y: CInt, x: CInt): CInt = extern
   @name("ncurses_addstr")
@@ -103,6 +105,8 @@ object LibNcurses {
   def attron(attr: CInt): CInt = extern
   @name("ncurses_attroff")
   def attroff(attr: CInt): CInt = extern
+  @name("ncurses_wattron")
+  def bkgdset(ch: chtype): Unit = extern
   @name("ncurses_A_NORMAL")
   def A_NORMAL: CInt = extern
   @name("ncurses_A_STANDOUT")
