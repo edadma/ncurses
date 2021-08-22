@@ -95,4 +95,10 @@ package object ncurses {
 
   def clear: Int = nc.clear
 
+  def attron(attrs: Int): Int = nc.attron(attrs)
+
+  def attroff(attrs: Int): Int = nc.attroff(attrs)
+
+  def COLOR_PAIR(c: Int): Int = nc.COLOR_PAIR(c)
+
 }

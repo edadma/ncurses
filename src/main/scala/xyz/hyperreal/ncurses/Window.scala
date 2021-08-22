@@ -57,4 +57,12 @@ class Window private[ncurses] (val win: WINDOW) extends AnyVal {
 
   def attroff(attr: Int): Int = nc.wattroff(win, attr)
 
+  def redrawwin: Int = nc.redrawwin(win)
+
+  def wredrawln(beg_line: Int, num_lines: Int): Int = nc.wredrawln(win, beg_line, num_lines)
+
+  def init_pair(pair: Short, f: Short, b: Short): Int = nc.init_pair(pair, f, b)
+
+  def init_color(color: Short, r: Short, g: Short, b: Short): Int = nc.init_color(color, r, g, b)
+
 }

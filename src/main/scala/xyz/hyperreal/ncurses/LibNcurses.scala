@@ -40,6 +40,10 @@ object LibNcurses {
   def panel_above(panel: PANEL): PANEL                                        = extern
   def update_panels(): Unit                                                   = extern
   def doupdate: CInt                                                          = extern
+  def redrawwin(win: WINDOW): CInt                                            = extern
+  def wredrawln(win: WINDOW, beg_line: CInt, num_lines: CInt): CInt           = extern
+  def init_pair(pair: CShort, f: CShort, b: CShort): CInt                     = extern
+  def init_color(color: CShort, r: CShort, g: CShort, b: CShort): CInt        = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -133,5 +137,7 @@ object LibNcurses {
   def A_CHARTEXT: CInt = extern
   @name("ncurses_ACS_VLINE")
   def ACS_VLINE: chtype = extern
+  @name("ncurses_COLOR_PAIR")
+  def COLOR_PAIR(c: CInt): CInt = extern
 
 }

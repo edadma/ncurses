@@ -49,3 +49,5 @@ int ncurses_A_ALTCHARSET() { return A_ALTCHARSET; }
 int ncurses_A_CHARTEXT() { return A_CHARTEXT; }
 
 chtype ncurses_ACS_VLINE() { return ACS_VLINE; }
+
+int ncurses_COLOR_PAIR(int n) { return COLOR_PAIR(n); }
