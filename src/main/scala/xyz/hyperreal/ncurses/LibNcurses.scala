@@ -107,7 +107,7 @@ object LibNcurses {
   def attron(attr: CInt): CInt = extern
   @name("ncurses_attroff")
   def attroff(attr: CInt): CInt = extern
-  @name("ncurses_wattron")
+  @name("ncurses_bkgdset")
   def bkgdset(ch: chtype): Unit = extern
   @name("ncurses_A_NORMAL")
   def A_NORMAL: CInt = extern
