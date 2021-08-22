@@ -1,20 +1,19 @@
 package xyz.hyperreal.ncurses
 
-import scala.scalanative.unsafe.{CBool, CInt, CString, CVarArgList, Ptr, extern, link, name}
-import scala.scalanative.unsigned.UInt
+import scala.scalanative.unsafe._
 
 @link("panel")
 @link("ncurses")
 @extern
-object LibNCurses {
+object LibNcurses {
 
   type WINDOW = Ptr[Byte]
   type PANEL  = Ptr[Byte]
-  type chtype = UInt
+  type chtype = CUnsignedInt
 
   val stdscr: WINDOW = extern
 
-  def initscr: Ptr[WINDOW]                                                    = extern
+  def initscr: WINDOW                                                         = extern
   def cbreak: CInt                                                            = extern
   def raw: CInt                                                               = extern
   def noecho: CInt                                                            = extern
@@ -57,7 +56,7 @@ object LibNCurses {
   @name("ncurses_mvwaddstr")
   def mvwaddstr(win: WINDOW, y: CInt, x: CInt, str: CString): CInt = extern
   @name("ncurses_addch")
-  def addch(str: chtype): CInt = extern
+  def addch(ch: chtype): CInt = extern
   @name("ncurses_KEY_DOWN")
   def KEY_DOWN: CInt = extern
   @name("ncurses_KEY_UP")

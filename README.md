@@ -7,7 +7,7 @@ Example
 -------
 
 ```scala
-import xyz.hyperreal.ncurses.{LibNCurses => nc, LibNCursesHelpers => nch}
+import xyz.hyperreal.ncurses.{LibNcurses => nc, LibNCursesHelpers => nch}
 
 object Main extends App {
 
@@ -17,4 +17,5 @@ object Main extends App {
   nc.endwin
 
 }
+
 ```

@@ -1,12 +1,18 @@
-//import xyz.hyperreal.ncurses.{LibNCurses => nc}
-//
-//import scala.scalanative.unsafe.CQuote
-//
-//object Main extends App {
-//
-//  nc.initscr
-//  nc.addstr(c"Scala Native is awesome!")
-//  nc.getch
-//  nc.endwin
-//
-//}
+import xyz.hyperreal.ncurses._
+
+object Main extends App {
+
+  try {
+    initscr
+    printw("%s\n", "Scala Native is awesome!")
+    addch('!')
+    getch
+  } catch {
+    case e: Exception =>
+      endwin
+      e.printStackTrace()
+  }
+
+  endwin
+
+}
