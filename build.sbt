@@ -1,6 +1,6 @@
 name := "ncurses"
 
-version := "0.1.0-snapshot.38"
+version := "0.1.0-snapshot.39"
 
 scalaVersion := "2.13.6"
 

@@ -17,14 +17,13 @@ class Window(val win: WINDOW) extends AnyVal {
     printw(fmt, args: _*)
   }
 
-  def mvwprintw(y: Int, x: Int, fmt: String, args: Any*): CInt = {
-    move(y, x)
-    printw(fmt, args: _*)
-  }
-
   def getch(): Int = nc.wgetch(win)
 
-  def addnstr(str: String, n: Int): Int = Zone(implicit z => nc.waddnstr(win, toCString(str), n))
+  def addstr(str: String): Int = Zone(implicit z => nc.waddstr(win, toCString(str)))
+
+  def addnstr(str: String, n: Int): Int = Zone(implicit z => nc.addnstr(toCString(str), n))
+
+  def mvaddstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvwaddstr(win, y, x, toCString(str)))
 
   def addch(ch: Int): Int = nc.waddch(win, ch.toUInt)
 
@@ -53,5 +52,9 @@ class Window(val win: WINDOW) extends AnyVal {
   def getmaxy: Int = nc.getmaxy(win)
 
   def getmaxx: Int = nc.getmaxx(win)
+
+  def attron(attr: Int): Int = nc.wattron(win, attr)
+
+  def attroff(attr: Int): Int = nc.wattroff(win, attr)
 
 }

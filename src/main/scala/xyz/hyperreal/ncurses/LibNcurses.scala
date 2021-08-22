@@ -51,6 +51,8 @@ object LibNcurses {
   def move(y: CInt, x: CInt): CInt = extern
   @name("ncurses_addstr")
   def addstr(str: CString): CInt = extern
+  @name("ncurses_addnstr")
+  def addnstr(str: CString, n: CInt): CInt = extern
   @name("ncurses_mvaddstr")
   def mvaddstr(y: CInt, x: CInt, str: CString): CInt = extern
   @name("ncurses_waddstr")

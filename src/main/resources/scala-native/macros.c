@@ -5,6 +5,7 @@ int ncurses_getch() { return getch(); }
 int ncurses_scrl(int n) { return scrl(n); }
 int ncurses_move(int y, int x) { return move(y, x); }
 int ncurses_addstr(char* str) { return addstr(str); }
+int ncurses_addnstr(char* str, int n) { return addnstr(str, n); }
 int ncurses_mvaddstr(int y, int x, char* str) { return mvaddstr(y, x, str); }
 int ncurses_waddstr(WINDOW* win, char* str) { return waddstr(win, str); }
 int ncurses_mvwaddstr(WINDOW* win, int y, int x, char* str) { return mvwaddstr(win, y, x, str); }
