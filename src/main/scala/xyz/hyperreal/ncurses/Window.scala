@@ -1,12 +1,12 @@
 package xyz.hyperreal.ncurses
 
 import xyz.hyperreal.ncurses.{LibNcurses => nc}
-import nc.{PANEL, WINDOW}
+import nc.WINDOW
 
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
 
-class Window(val win: WINDOW) extends AnyVal {
+class Window private[ncurses] (val win: WINDOW) extends AnyVal {
 
   def printw(fmt: String, args: Any*): CInt = Zone(implicit z => nc.vw_printw(win, toCString(fmt), varargs(args)))
 
@@ -17,9 +17,11 @@ class Window(val win: WINDOW) extends AnyVal {
     printw(fmt, args: _*)
   }
 
-  def getch(): Int = nc.wgetch(win)
+  def getch: Int = nc.wgetch(win)
 
-  def addstr(str: String): Int = Zone(implicit z => nc.waddstr(win, toCString(str)))
+  def addstr(str: String): Int = Zone { implicit z =>
+    nc.waddstr(win, toCString(str))
+  }
 
   def addnstr(str: String, n: Int): Int = Zone(implicit z => nc.addnstr(toCString(str), n))
 
@@ -46,8 +48,6 @@ class Window(val win: WINDOW) extends AnyVal {
   def nodelay(bf: Boolean): Unit = nc.nodelay(win, bf)
 
   def wresize(lines: Int, columns: Int): Unit = nc.wresize(win, lines, columns)
-
-  def new_panel: Panel = new Panel(nc.new_panel(win))
 
   def getmaxy: Int = nc.getmaxy(win)
 

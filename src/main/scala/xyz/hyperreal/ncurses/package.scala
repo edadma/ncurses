@@ -81,6 +81,8 @@ package object ncurses {
   def newwin(nlines: Int, ncols: Int, begin_y: Int, begin_x: Int): Window =
     new Window(nc.newwin(nlines, ncols, begin_y, begin_x))
 
+  def new_panel(win: Window): Panel = new Panel(nc.new_panel(win.win))
+
   def keyname(c: Int): String = fromCString(nc.keyname(c))
 
   def update_panels(): Unit = nc.update_panels()
