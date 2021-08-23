@@ -99,4 +99,9 @@ class Window private[ncurses] (private[ncurses] val win: WINDOW) extends AnyVal 
 
   def refresh: Int = nc.wrefresh(win)
 
+  def box(win: WINDOW, verch: Int, horch: Int): Int = nc.box(win, verch.toUInt, horch.toUInt)
+
+  def border(ls: Int, rs: Int, ts: Int, bs: Int, tl: Int, tr: Int, bl: Int, br: Int): Int =
+    nc.wborder(win, ls.toUInt, rs.toUInt, ts.toUInt, bs.toUInt, tl.toUInt, tr.toUInt, bl.toUInt, br.toUInt)
+
 }

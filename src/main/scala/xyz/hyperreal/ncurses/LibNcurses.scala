@@ -49,6 +49,15 @@ object LibNcurses {
   def wgetnstr(win: WINDOW, str: CString, n: CInt): CInt                              = extern
   def wchgat(win: WINDOW, n: CInt, attr: attr_t, pair: CShort, opts: Ptr[Byte]): CInt = extern
   def wrefresh(win: WINDOW): CInt                                                     = extern
+  def wborder(win: WINDOW,
+              ls: chtype,
+              rs: chtype,
+              ts: chtype,
+              bs: chtype,
+              tl: chtype,
+              tr: chtype,
+              bl: chtype,
+              br: chtype): CInt = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -158,5 +167,7 @@ object LibNcurses {
   def chgat(n: CInt, attr: attr_t, pair: CShort, opts: Ptr[Byte]): CInt = extern
   @name("ncurses_mvchgat")
   def mvchgat(y: CInt, x: CInt, n: CInt, attr: attr_t, pair: CShort, opts: Ptr[Byte]): CInt = extern
+  @name("ncurses_box")
+  def box(win: WINDOW, verch: chtype, horch: chtype): CInt = extern
 
 }
