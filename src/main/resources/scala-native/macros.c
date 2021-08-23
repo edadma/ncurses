@@ -27,7 +27,7 @@ int ncurses_getcurx(WINDOW* win) { return getcurx(win); }
 int ncurses_mvwchgat(WINDOW *win, int y, int x, int n, attr_t attr, short pair, const void *opts) { return mvwchgat(win, y, x, n , attr, pair, opts); }
              // todo: add mvwchgat, chgat
 int ncurses_chgat(int n, attr_t attr, short pair, const void *opts) { return chgat( n, attr, pair, opts); }
-int ncurses_mvchgat(int y, int x, int n, attr_t attr, short pair, const void *opts) { return mvchgat(y, x, attr, pair, opts); }
+int ncurses_mvchgat(int y, int x, int n, attr_t attr, short pair, const void *opts) { return mvchgat(y, x, n, attr, pair, opts); }
 
 int ncurses_KEY_DOWN() { return KEY_DOWN; }
 int ncurses_KEY_UP() { return KEY_UP; }
