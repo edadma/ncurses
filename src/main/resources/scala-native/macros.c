@@ -24,6 +24,8 @@ void ncurses_getmaxyx(WINDOW* win, int* y, int* x) { getmaxyx(win, *y, *x); }
 void ncurses_getyx(WINDOW* win, int* y, int* x) { getyx(win, *y, *x); }
 int ncurses_getcury(WINDOW* win) { return getcury(win); }
 int ncurses_getcurx(WINDOW* win) { return getcurx(win); }
+int ncurses_getcurx(WINDOW* win) { return getcurx(win); }
+// todo: add mvwchgat, chgat
 
 int ncurses_KEY_DOWN() { return KEY_DOWN; }
 int ncurses_KEY_UP() { return KEY_UP; }

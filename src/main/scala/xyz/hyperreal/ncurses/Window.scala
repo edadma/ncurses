@@ -1,7 +1,7 @@
 package xyz.hyperreal.ncurses
 
 import xyz.hyperreal.ncurses.{LibNcurses => nc}
-import nc.WINDOW
+import nc.{WINDOW, attr_t}
 
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
@@ -92,5 +92,7 @@ class Window private[ncurses] (private[ncurses] val win: WINDOW) extends AnyVal 
   def getcury: Int = nc.getcury(win)
 
   def getcurx: Int = nc.getcurx(win)
+
+  def chgat(n: Int, attr: Int, pair: Short): Int = nc.wchgat(win, n, attr.toUInt, pair, null)
 
 }
