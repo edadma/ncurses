@@ -105,8 +105,14 @@ package object ncurses {
 
   def getnstr(n: Int): (Int, String) = stdscr.getnstr(n)
 
-  def chgat(n: Int, attr: Int, pair: Short): CInt = nc.chgat(n, attr.toUInt, pair, null)
+  def chgat(n: Int, attr: Int, pair: Short): Int = nc.chgat(n, attr.toUInt, pair, null)
 
-  def mvchgat(y: CInt, x: CInt, n: CInt, attr: Int, pair: CShort): CInt = nc.mvchgat(y, x, n, attr.toUInt, pair, null)
+  def mvchgat(y: Int, x: Int, n: Int, attr: Int, pair: Short): Int = nc.mvchgat(y, x, n, attr.toUInt, pair, null)
+
+  def mvaddch(x: Int, n: Int, ch: Int): Int = nc.mvaddch(x, n, ch.toUInt)
+
+  def mvhline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvhline(y, x, ch.toUInt, n)
+
+  def mvvline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvvline(y, x, ch.toUInt, n)
 
 }

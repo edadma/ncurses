@@ -169,5 +169,11 @@ object LibNcurses {
   def mvchgat(y: CInt, x: CInt, n: CInt, attr: attr_t, pair: CShort, opts: Ptr[Byte]): CInt = extern
   @name("ncurses_box")
   def box(win: WINDOW, verch: chtype, horch: chtype): CInt = extern
+  @name("ncurses_mvaddch")
+  def mvaddch(x: CInt, n: CInt, ch: chtype): CInt = extern
+  @name("ncurses_mvhline")
+  def mvhline(y: CInt, x: CInt, ch: chtype, n: CInt): CInt = extern
+  @name("ncurses_mvvline")
+  def mvvline(y: CInt, x: CInt, ch: chtype, n: CInt): CInt = extern
 
 }
