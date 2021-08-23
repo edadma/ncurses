@@ -1,10 +1,10 @@
 ncurses
 =======
 
-*ncurses* provides bindings for the GNU Ncurses library.  This package is a work in progress as there are hundreds of functions in the Ncurses library.  Nonetheless, this package is very usable as it.  `libncurses-dev` needs to be installed.
+*ncurses* provides bindings for the GNU Ncurses library.  This package is a work in progress as there are hundreds of functions in the Ncurses library.  Nonetheless, this package is quite usable as is.  `libncurses-dev` needs to be installed.
 
-Example
--------
+Obligatory "Hello World" example
+--------------------------------
 
 ```scala
 import xyz.hyperreal.ncurses._
