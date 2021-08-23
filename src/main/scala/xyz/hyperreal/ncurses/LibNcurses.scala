@@ -48,6 +48,7 @@ object LibNcurses {
   def curs_set(visibility: CInt): CInt                                                = extern
   def wgetnstr(win: WINDOW, str: CString, n: CInt): CInt                              = extern
   def wchgat(win: WINDOW, n: CInt, attr: attr_t, pair: CShort, opts: Ptr[Byte]): CInt = extern
+  def wrefresh(win: WINDOW): CInt                                                     = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
