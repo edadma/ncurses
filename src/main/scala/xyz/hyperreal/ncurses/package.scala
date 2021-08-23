@@ -107,4 +107,6 @@ package object ncurses {
 
   def chgat(n: Int, attr: Int, pair: Short): CInt = nc.chgat(n, attr.toUInt, pair, null)
 
+  def mvchgat(y: CInt, x: CInt, n: CInt, attr: Int, pair: CShort): CInt = nc.mvchgat(y, x, n, attr.toUInt, pair, null)
+
 }
