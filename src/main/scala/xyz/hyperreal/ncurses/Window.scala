@@ -81,4 +81,16 @@ class Window private[ncurses] (private[ncurses] val win: WINDOW) extends AnyVal 
     (!y, !x)
   }
 
+  def getyx: (Int, Int) = {
+    val y = stackalloc[CInt]
+    val x = stackalloc[CInt]
+
+    nc.getyx(win, y, x)
+    (!y, !x)
+  }
+
+  def getcury: Int = nc.getcury(win)
+
+  def getcurx: Int = nc.getcurx(win)
+
 }

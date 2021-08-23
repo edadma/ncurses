@@ -143,5 +143,11 @@ object LibNcurses {
   def COLOR_PAIR(c: CInt): CInt = extern
   @name("ncurses_getmaxyx")
   def getmaxyx(win: WINDOW, y: Ptr[CInt], x: Ptr[CInt]): Unit = extern
+  @name("ncurses_getyx")
+  def getyx(win: WINDOW, y: Ptr[CInt], x: Ptr[CInt]): Unit = extern
+  @name("ncurses_getcury")
+  def getcury(win: WINDOW): CInt = extern
+  @name("ncurses_getcurx")
+  def getcurx(win: WINDOW): CInt = extern
 
 }
