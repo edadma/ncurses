@@ -6,7 +6,7 @@ import nc.WINDOW
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
 
-class Window private[ncurses] (val win: WINDOW) extends AnyVal {
+class Window private[ncurses] (private[ncurses] val win: WINDOW) extends AnyVal {
 
   def printw(fmt: String, args: Any*): CInt = Zone(implicit z => nc.vw_printw(win, toCString(fmt), varargs(args)))
 
@@ -64,5 +64,21 @@ class Window private[ncurses] (val win: WINDOW) extends AnyVal {
   def init_pair(pair: Short, f: Short, b: Short): Int = nc.init_pair(pair, f, b)
 
   def init_color(color: Short, r: Short, g: Short, b: Short): Int = nc.init_color(color, r, g, b)
+
+  def getnstr(n: Int): (Int, String) = {
+    require(n > 0, s"getnstr: n should be positive: n = $n")
+
+    val buf = stackalloc[CChar]((n + 1).toUInt)
+
+    (nc.wgetnstr(win, buf, n), fromCString(buf))
+  }
+
+  def getmaxyx: (Int, Int) = {
+    val y = stackalloc[CInt]
+    val x = stackalloc[CInt]
+
+    nc.getmaxyx(win, y, x)
+    (!y, !x)
+  }
 
 }

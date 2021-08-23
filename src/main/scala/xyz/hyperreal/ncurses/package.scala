@@ -101,4 +101,8 @@ package object ncurses {
 
   def COLOR_PAIR(c: Int): Int = nc.COLOR_PAIR(c)
 
+  def curs_set(visibility: Int): Int = nc.curs_set(visibility)
+
+  def getnstr(n: Int): (Int, String) = stdscr.getnstr(n)
+
 }

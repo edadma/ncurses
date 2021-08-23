@@ -20,6 +20,7 @@ int ncurses_wattroff(WINDOW* win, int attr) { return wattroff(win, attr); }
 int ncurses_attron(int attr) { return attron(attr); }
 int ncurses_attroff(int attr) { return attroff(attr); }
 void ncurses_bkgdset(chtype ch) { return bkgdset(ch); }
+void ncurses_getmaxyx(WINDOW* win, int* y, int* x) { return getmaxyx(win, y, x); }
 int ncurses_KEY_DOWN() { return KEY_DOWN; }
 int ncurses_KEY_UP() { return KEY_UP; }
 int ncurses_KEY_LEFT() { return KEY_LEFT; }

@@ -44,6 +44,8 @@ object LibNcurses {
   def wredrawln(win: WINDOW, beg_line: CInt, num_lines: CInt): CInt           = extern
   def init_pair(pair: CShort, f: CShort, b: CShort): CInt                     = extern
   def init_color(color: CShort, r: CShort, g: CShort, b: CShort): CInt        = extern
+  def curs_set(visibility: CInt): CInt                                        = extern
+  def wgetnstr(win: WINDOW, str: CString, n: CInt): CInt                      = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -139,5 +141,7 @@ object LibNcurses {
   def ACS_VLINE: chtype = extern
   @name("ncurses_COLOR_PAIR")
   def COLOR_PAIR(c: CInt): CInt = extern
+  @name("ncurses_getmaxyx")
+  def getmaxyx(win: WINDOW, y: Ptr[CInt], x: Ptr[CInt]): Unit = extern
 
 }
