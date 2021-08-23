@@ -95,6 +95,6 @@ class Window private[ncurses] (private[ncurses] val win: WINDOW) extends AnyVal 
 
   def chgat(n: Int, attr: Int, pair: Short): Int = nc.wchgat(win, n, attr.toUInt, pair, null)
 
-  def mvwchgat(y: Int, x: Int, n: Int, attr: Int, pair: Short): Int = nc.mvwchgat(win, y, x, n, attr.toUInt, pair, null)
+  def mvchgat(y: Int, x: Int, n: Int, attr: Int, pair: Short): Int = nc.mvwchgat(win, y, x, n, attr.toUInt, pair, null)
 
 }

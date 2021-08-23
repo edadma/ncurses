@@ -105,4 +105,6 @@ package object ncurses {
 
   def getnstr(n: Int): (Int, String) = stdscr.getnstr(n)
 
+  def chgat(n: Int, attr: Int, pair: Short): CInt = nc.chgat(n, attr.toUInt, pair, null)
+
 }

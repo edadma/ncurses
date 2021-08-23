@@ -153,5 +153,7 @@ object LibNcurses {
   def getcurx(win: WINDOW): CInt = extern
   @name("ncurses_mvwchgat")
   def mvwchgat(win: WINDOW, y: CInt, x: CInt, n: CInt, attr: attr_t, pair: CShort, opts: Ptr[Byte]): CInt = extern
+  @name("ncurses_chgat")
+  def chgat(n: CInt, attr: attr_t, pair: CShort, opts: Ptr[Byte]): CInt = extern
 
 }
