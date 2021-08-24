@@ -182,5 +182,7 @@ object LibNcurses {
   def mvhline(y: CInt, x: CInt, ch: chtype, n: CInt): CInt = extern
   @name("ncurses_mvvline")
   def mvvline(y: CInt, x: CInt, ch: chtype, n: CInt): CInt = extern
+  @name("ncurses_ALL_MOUSE_EVENTS")
+  def ALL_MOUSE_EVENTS: mmask_t = extern
 
 }

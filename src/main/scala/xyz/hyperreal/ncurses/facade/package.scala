@@ -9,35 +9,36 @@ package object facade {
 
   case class MEvent(id: Int, x: Int, y: Int, bstate: Int)
 
-  lazy val stdscr             = new Window(nc.stdscr)
-  lazy val LINES: Int         = nc.LINES
-  lazy val COLS: Int          = nc.COLS
-  lazy val KEY_DOWN: Int      = nc.KEY_DOWN
-  lazy val KEY_UP: Int        = nc.KEY_UP
-  lazy val KEY_LEFT: Int      = nc.KEY_LEFT
-  lazy val KEY_RIGHT: Int     = nc.KEY_RIGHT
-  lazy val KEY_HOME: Int      = nc.KEY_HOME
-  lazy val KEY_END: Int       = nc.KEY_END
-  lazy val KEY_BACKSPACE: Int = nc.KEY_BACKSPACE
-  lazy val KEY_DC: Int        = nc.KEY_DC
-  lazy val KEY_PPAGE: Int     = nc.KEY_PPAGE
-  lazy val KEY_NPAGE: Int     = nc.KEY_NPAGE
-  lazy val KEY_IC: Int        = nc.KEY_IC
-  lazy val KEY_STAB: Int      = nc.KEY_STAB
-  lazy val OK: Int            = nc.OK
-  lazy val ERR: Int           = nc.ERR
-  lazy val A_NORMAL: Int      = nc.A_NORMAL
-  lazy val A_STANDOUT: Int    = nc.A_STANDOUT
-  lazy val A_UNDERLINE: Int   = nc.A_UNDERLINE
-  lazy val A_REVERSE: Int     = nc.A_REVERSE
-  lazy val A_BLINK: Int       = nc.A_BLINK
-  lazy val A_DIM: Int         = nc.A_DIM
-  lazy val A_BOLD: Int        = nc.A_BOLD
-  lazy val A_PROTECT: Int     = nc.A_PROTECT
-  lazy val A_INVIS: Int       = nc.A_INVIS
-  lazy val A_ALTCHARSET: Int  = nc.A_ALTCHARSET
-  lazy val A_CHARTEXT: Int    = nc.A_CHARTEXT
-  lazy val ACS_VLINE: Int     = nc.ACS_VLINE.toInt
+  lazy val stdscr                = new Window(nc.stdscr)
+  lazy val LINES: Int            = nc.LINES
+  lazy val COLS: Int             = nc.COLS
+  lazy val KEY_DOWN: Int         = nc.KEY_DOWN
+  lazy val KEY_UP: Int           = nc.KEY_UP
+  lazy val KEY_LEFT: Int         = nc.KEY_LEFT
+  lazy val KEY_RIGHT: Int        = nc.KEY_RIGHT
+  lazy val KEY_HOME: Int         = nc.KEY_HOME
+  lazy val KEY_END: Int          = nc.KEY_END
+  lazy val KEY_BACKSPACE: Int    = nc.KEY_BACKSPACE
+  lazy val KEY_DC: Int           = nc.KEY_DC
+  lazy val KEY_PPAGE: Int        = nc.KEY_PPAGE
+  lazy val KEY_NPAGE: Int        = nc.KEY_NPAGE
+  lazy val KEY_IC: Int           = nc.KEY_IC
+  lazy val KEY_STAB: Int         = nc.KEY_STAB
+  lazy val OK: Int               = nc.OK
+  lazy val ERR: Int              = nc.ERR
+  lazy val A_NORMAL: Int         = nc.A_NORMAL
+  lazy val A_STANDOUT: Int       = nc.A_STANDOUT
+  lazy val A_UNDERLINE: Int      = nc.A_UNDERLINE
+  lazy val A_REVERSE: Int        = nc.A_REVERSE
+  lazy val A_BLINK: Int          = nc.A_BLINK
+  lazy val A_DIM: Int            = nc.A_DIM
+  lazy val A_BOLD: Int           = nc.A_BOLD
+  lazy val A_PROTECT: Int        = nc.A_PROTECT
+  lazy val A_INVIS: Int          = nc.A_INVIS
+  lazy val A_ALTCHARSET: Int     = nc.A_ALTCHARSET
+  lazy val A_CHARTEXT: Int       = nc.A_CHARTEXT
+  lazy val ACS_VLINE: Int        = nc.ACS_VLINE.toInt
+  lazy val ALL_MOUSE_EVENTS: Int = nc.ALL_MOUSE_EVENTS.toInt
 
   private[facade] def varargs(args: Seq[Any])(implicit z: Zone) =
     toCVarArgList(
