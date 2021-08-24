@@ -110,6 +110,8 @@ object LibNcurses {
   def KEY_IC: CInt = extern
   @name("ncurses_KEY_STAB")
   def KEY_STAB: CInt = extern
+  @name("ncurses_KEY_MOUSE")
+  def KEY_MOUSE: CInt = extern
   @name("ncurses_clrtoeol")
   def clrtoeol: CInt = extern
   @name("ncurses_clrtobot")

@@ -24,6 +24,7 @@ package object facade {
   lazy val KEY_NPAGE: Int        = nc.KEY_NPAGE
   lazy val KEY_IC: Int           = nc.KEY_IC
   lazy val KEY_STAB: Int         = nc.KEY_STAB
+  lazy val KEY_MOUSE: Int        = nc.KEY_MOUSE
   lazy val OK: Int               = nc.OK
   lazy val ERR: Int              = nc.ERR
   lazy val A_NORMAL: Int         = nc.A_NORMAL

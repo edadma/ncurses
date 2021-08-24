@@ -72,13 +72,13 @@ val menu_win = newwin(HEIGHT, WIDTH, starty, startx)
 print_menu(menu_win, 1)
 
 /* Get all the mouse events */
-mousemask(ALL_MOUSE_EVENTS, NULL);
-mouseinterval(0);
+mousemask(ALL_MOUSE_EVENTS)
+mouseinterval(0)
 
-while (1) {
-  c = wgetch(menu_win);
-  switch (c) {
-    case KEY_MOUSE:
+while (true) {
+  c = menu_win.getch;
+  c match {
+    case KEY_MOUSE =>
       if (getmouse(&event) == OK) { /* When the user clicks left mouse button */
         if (event.bstate & BUTTON1_PRESSED) {
           report_choice(event.x + 1, event.y + 1, &choice);

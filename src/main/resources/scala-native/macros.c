@@ -44,6 +44,7 @@ int ncurses_KEY_PPAGE() { return KEY_PPAGE; }
 int ncurses_KEY_NPAGE() { return KEY_NPAGE; }
 int ncurses_KEY_IC() { return KEY_IC; }
 int ncurses_KEY_STAB() { return KEY_STAB; }
+int ncurses_KEY_MOUSE() { return KEY_MOUSE; }
 
 int ncurses_OK() { return OK; }
 int ncurses_ERR() { return ERR; }
