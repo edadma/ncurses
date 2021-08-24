@@ -60,7 +60,9 @@ package object facade {
       args
         map {
           case s: String => CVarArg.materialize(toCString(s))
-          case x         => x.asInstanceOf[CVarArg]
+          case n: Int    => CVarArg.materialize(n)
+          case n: Long   => CVarArg.materialize(n)
+          case n: Double => CVarArg.materialize(n)
         })
 
   def initscr: Window = new Window(nc.initscr)
@@ -148,5 +150,7 @@ package object facade {
 
     (nc.getmouse(event), MEvent(event._1, event._2, event._3, event._5.toInt))
   }
+
+  def has_colors: Boolean = nc.has_colors
 
 }

@@ -65,6 +65,7 @@ object LibNcurses {
   def mousemask(newmask: mmask_t, oldmask: Ptr[mmask_t]): mmask_t = extern
   def mouseinterval(interval: CInt): CInt                         = extern
   def getmouse(event: Ptr[MEVENT]): CInt                          = extern
+  def has_colors: CBool                                           = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
