@@ -172,4 +172,8 @@ package object facade {
     (nc.mouse_trafo(py, px, to_screen), !py, !px)
   }
 
+  def def_prog_mode: Int = nc.def_prog_mode
+
+  def reset_prog_mode: Int = nc.def_prog_mode
+
 }

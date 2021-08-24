@@ -68,6 +68,8 @@ object LibNcurses {
   def has_colors: CBool                                                              = extern
   def mouse_trafo(y: Ptr[CInt], x: Ptr[CInt], to_screen: CBool): CBool               = extern
   def wmouse_trafo(win: WINDOW, y: Ptr[CInt], x: Ptr[CInt], to_screen: CBool): CBool = extern
+  def def_prog_mode: CInt                                                            = extern
+  def reset_prog_mode: CInt                                                          = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
