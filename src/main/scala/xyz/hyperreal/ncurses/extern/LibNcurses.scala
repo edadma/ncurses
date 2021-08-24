@@ -70,6 +70,10 @@ object LibNcurses {
   def wmouse_trafo(win: WINDOW, y: Ptr[CInt], x: Ptr[CInt], to_screen: CBool): CBool = extern
   def def_prog_mode: CInt                                                            = extern
   def reset_prog_mode: CInt                                                          = extern
+  def show_panel(pan: PANEL): CInt                                                   = extern
+  def hide_panel(pan: PANEL): CInt                                                   = extern
+  def top_panel(pan: PANEL): CInt                                                    = extern
+  def bottom_panel(pan: PANEL): CInt                                                 = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
