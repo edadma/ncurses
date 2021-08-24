@@ -215,5 +215,21 @@ object LibNcurses {
   def BUTTON_ALT: mmask_t = extern
   @name("ncurses_REPORT_MOUSE_POSITION")
   def REPORT_MOUSE_POSITION: mmask_t = extern
+  @name("ncurses_COLOR_BLACK")
+  def COLOR_BLACK: CInt = extern
+  @name("ncurses_COLOR_RED")
+  def COLOR_RED: CInt = extern
+  @name("ncurses_COLOR_GREEN")
+  def COLOR_GREEN: CInt = extern
+  @name("ncurses_COLOR_YELLOW")
+  def COLOR_YELLOW: CInt = extern
+  @name("ncurses_COLOR_BLUE")
+  def COLOR_BLUE: CInt = extern
+  @name("ncurses_COLOR_MAGENTA")
+  def COLOR_MAGENTA: CInt = extern
+  @name("ncurses_COLOR_CYAN")
+  def COLOR_CYAN: CInt = extern
+  @name("ncurses_COLOR_WHITE")
+  def COLOR_WHITE: CInt = extern
 
 }

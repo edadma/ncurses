@@ -54,6 +54,14 @@ package object facade {
   lazy val BUTTON_SHIFT: Int           = nc.BUTTON_SHIFT.toInt
   lazy val BUTTON_ALT: Int             = nc.BUTTON_ALT.toInt
   lazy val REPORT_MOUSE_POSITION: Int  = nc.REPORT_MOUSE_POSITION.toInt
+  lazy val COLOR_BLACK: Int            = nc.COLOR_BLACK
+  lazy val COLOR_RED: Int              = nc.COLOR_RED
+  lazy val COLOR_GREEN: Int            = nc.COLOR_GREEN
+  lazy val COLOR_YELLOW: Int           = nc.COLOR_YELLOW
+  lazy val COLOR_BLUE: Int             = nc.COLOR_BLUE
+  lazy val COLOR_MAGENTA: Int          = nc.COLOR_MAGENTA
+  lazy val COLOR_CYAN: Int             = nc.COLOR_CYAN
+  lazy val COLOR_WHITE: Int            = nc.COLOR_WHITE
 
   private[facade] def varargs(args: Seq[Any])(implicit z: Zone) =
     toCVarArgList(

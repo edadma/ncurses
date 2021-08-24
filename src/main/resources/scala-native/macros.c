@@ -80,3 +80,12 @@ mmask_t ncurses_BUTTON_CTRL() { return BUTTON_CTRL; }
 mmask_t ncurses_BUTTON_SHIFT() { return BUTTON_SHIFT; }
 mmask_t ncurses_BUTTON_ALT() { return BUTTON_ALT; }
 mmask_t ncurses_REPORT_MOUSE_POSITION() { return REPORT_MOUSE_POSITION; }
+
+int ncurses_COLOR_BLACK() { return COLOR_BLACK; }
+int ncurses_COLOR_RED() { return COLOR_RED; }
+int ncurses_COLOR_GREEN() { return COLOR_GREEN; }
+int ncurses_COLOR_YELLOW() { return COLOR_YELLOW; }
+int ncurses_COLOR_BLUE() { return COLOR_BLUE; }
+int ncurses_COLOR_MAGENTA() { return COLOR_MAGENTA; }
+int ncurses_COLOR_CYAN() { return COLOR_CYAN; }
+int ncurses_COLOR_WHITE() { return COLOR_WHITE; }
