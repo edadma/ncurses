@@ -103,4 +103,13 @@ class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal
   def border(ls: Int, rs: Int, ts: Int, bs: Int, tl: Int, tr: Int, bl: Int, br: Int): Int =
     nc.wborder(win, ls.toUInt, rs.toUInt, ts.toUInt, bs.toUInt, tl.toUInt, tr.toUInt, bl.toUInt, br.toUInt)
 
+  def mouse_trafo(y: Int, x: Int, to_screen: Boolean): (Boolean, Int, Int) = {
+    val py = stackalloc[CInt]
+    val px = stackalloc[CInt]
+
+    !py = y
+    !px = x
+    (nc.wmouse_trafo(win, py, px, to_screen), !py, !px)
+  }
+
 }

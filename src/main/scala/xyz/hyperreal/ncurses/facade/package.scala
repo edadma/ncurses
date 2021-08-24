@@ -163,4 +163,13 @@ package object facade {
 
   def init_color(color: Short, r: Short, g: Short, b: Short): Int = nc.init_color(color, r, g, b)
 
+  def mouse_trafo(y: Int, x: Int, to_screen: Boolean): (Boolean, Int, Int) = {
+    val py = stackalloc[CInt]
+    val px = stackalloc[CInt]
+
+    !py = y
+    !px = x
+    (nc.mouse_trafo(py, px, to_screen), !py, !px)
+  }
+
 }

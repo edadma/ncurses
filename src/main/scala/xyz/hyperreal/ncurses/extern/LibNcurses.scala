@@ -61,11 +61,13 @@ object LibNcurses {
               tl: chtype,
               tr: chtype,
               bl: chtype,
-              br: chtype): CInt                                   = extern
-  def mousemask(newmask: mmask_t, oldmask: Ptr[mmask_t]): mmask_t = extern
-  def mouseinterval(interval: CInt): CInt                         = extern
-  def getmouse(event: Ptr[MEVENT]): CInt                          = extern
-  def has_colors: CBool                                           = extern
+              br: chtype): CInt                                                      = extern
+  def mousemask(newmask: mmask_t, oldmask: Ptr[mmask_t]): mmask_t                    = extern
+  def mouseinterval(interval: CInt): CInt                                            = extern
+  def getmouse(event: Ptr[MEVENT]): CInt                                             = extern
+  def has_colors: CBool                                                              = extern
+  def mouse_trafo(y: Ptr[CInt], x: Ptr[CInt], to_screen: CBool): CBool               = extern
+  def wmouse_trafo(win: WINDOW, y: Ptr[CInt], x: Ptr[CInt], to_screen: CBool): CBool = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
