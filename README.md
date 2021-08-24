@@ -53,7 +53,7 @@ object Main extends App {
 Ncurses C library documentation
 -------------------------------
 
-The official documentation for the Ncurses library can be found at [ncurses][https://invisible-island.net/ncurses/man/ncurses.3x.html]. The official documentation for the extension libraries can be found at [panel][https://invisible-island.net/ncurses/man/panel.3x.html], [menu][https://invisible-island.net/ncurses/man/menu.3x.html], and [form][https://invisible-island.net/ncurses/man/form.3x.html].
+The official documentation for the Ncurses library can be found at [ncurses](https://invisible-island.net/ncurses/man/ncurses.3x.html). The official documentation for the extension libraries can be found at [panel](https://invisible-island.net/ncurses/man/panel.3x.html), [menu](https://invisible-island.net/ncurses/man/menu.3x.html), and [form](https://invisible-island.net/ncurses/man/form.3x.html).
 
 Guidelines
 ----------
