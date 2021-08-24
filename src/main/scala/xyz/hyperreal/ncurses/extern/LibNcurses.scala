@@ -163,8 +163,92 @@ object LibNcurses {
   def A_ALTCHARSET: CInt = extern
   @name("ncurses_A_CHARTEXT")
   def A_CHARTEXT: CInt = extern
+  @name("ncurses_ACS_ULCORNER")
+  def ACS_ULCORNER: CInt = extern
+  @name("ncurses_ACS_LLCORNER")
+  def ACS_LLCORNER: CInt = extern
+  @name("ncurses_ACS_URCORNER")
+  def ACS_URCORNER: CInt = extern
+  @name("ncurses_ACS_LRCORNER")
+  def ACS_LRCORNER: CInt = extern
+  @name("ncurses_ACS_LTEE")
+  def ACS_LTEE: CInt = extern
+  @name("ncurses_ACS_RTEE")
+  def ACS_RTEE: CInt = extern
+  @name("ncurses_ACS_BTEE")
+  def ACS_BTEE: CInt = extern
+  @name("ncurses_ACS_TTEE")
+  def ACS_TTEE: CInt = extern
+  @name("ncurses_ACS_HLINE")
+  def ACS_HLINE: CInt = extern
   @name("ncurses_ACS_VLINE")
-  def ACS_VLINE: chtype = extern
+  def ACS_VLINE: CInt = extern
+  @name("ncurses_ACS_PLUS")
+  def ACS_PLUS: CInt = extern
+  @name("ncurses_ACS_S1")
+  def ACS_S1: CInt = extern
+  @name("ncurses_ACS_S9")
+  def ACS_S9: CInt = extern
+  @name("ncurses_ACS_DIAMOND")
+  def ACS_DIAMOND: CInt = extern
+  @name("ncurses_ACS_CKBOARD")
+  def ACS_CKBOARD: CInt = extern
+  @name("ncurses_ACS_DEGREE")
+  def ACS_DEGREE: CInt = extern
+  @name("ncurses_ACS_PLMINUS")
+  def ACS_PLMINUS: CInt = extern
+  @name("ncurses_ACS_BULLET")
+  def ACS_BULLET: CInt = extern
+  @name("ncurses_ACS_LARROW")
+  def ACS_LARROW: CInt = extern
+  @name("ncurses_ACS_RARROW")
+  def ACS_RARROW: CInt = extern
+  @name("ncurses_ACS_DARROW")
+  def ACS_DARROW: CInt = extern
+  @name("ncurses_ACS_UARROW")
+  def ACS_UARROW: CInt = extern
+  @name("ncurses_ACS_BOARD")
+  def ACS_BOARD: CInt = extern
+  @name("ncurses_ACS_LANTERN")
+  def ACS_LANTERN: CInt = extern
+  @name("ncurses_ACS_BLOCK")
+  def ACS_BLOCK: CInt = extern
+  @name("ncurses_ACS_S3")
+  def ACS_S3: CInt = extern
+  @name("ncurses_ACS_S7")
+  def ACS_S7: CInt = extern
+  @name("ncurses_ACS_LEQUAL")
+  def ACS_LEQUAL: CInt = extern
+  @name("ncurses_ACS_GEQUAL")
+  def ACS_GEQUAL: CInt = extern
+  @name("ncurses_ACS_PI")
+  def ACS_PI: CInt = extern
+  @name("ncurses_ACS_NEQUAL")
+  def ACS_NEQUAL: CInt = extern
+  @name("ncurses_ACS_STERLING")
+  def ACS_STERLING: CInt = extern
+  @name("ncurses_ACS_BSSB")
+  def ACS_BSSB: CInt = extern
+  @name("ncurses_ACS_SSBB")
+  def ACS_SSBB: CInt = extern
+  @name("ncurses_ACS_BBSS")
+  def ACS_BBSS: CInt = extern
+  @name("ncurses_ACS_SBBS")
+  def ACS_SBBS: CInt = extern
+  @name("ncurses_ACS_SBSS")
+  def ACS_SBSS: CInt = extern
+  @name("ncurses_ACS_SSSB")
+  def ACS_SSSB: CInt = extern
+  @name("ncurses_ACS_SSBS")
+  def ACS_SSBS: CInt = extern
+  @name("ncurses_ACS_BSSS")
+  def ACS_BSSS: CInt = extern
+  @name("ncurses_ACS_BSBS")
+  def ACS_BSBS: CInt = extern
+  @name("ncurses_ACS_SBSB")
+  def ACS_SBSB: CInt = extern
+  @name("ncurses_ACS_SSSS")
+  def ACS_SSSS: CInt = extern
   @name("ncurses_COLOR_PAIR")
   def COLOR_PAIR(c: CInt): CInt = extern
   @name("ncurses_getmaxyx")

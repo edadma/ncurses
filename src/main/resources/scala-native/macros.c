@@ -62,6 +62,49 @@ int ncurses_A_ALTCHARSET() { return A_ALTCHARSET; }
 int ncurses_A_CHARTEXT() { return A_CHARTEXT; }
 
 chtype ncurses_ACS_VLINE() { return ACS_VLINE; }
+chtype ncurses_ACS_ULCORNER() { return ACS_ULCORNER; }
+chtype ncurses_ACS_LLCORNER() { return ACS_LLCORNER; }
+chtype ncurses_ACS_URCORNER() { return ACS_URCORNER; }
+chtype ncurses_ACS_LRCORNER() { return ACS_LRCORNER; }
+chtype ncurses_ACS_LTEE() { return ACS_LTEE; }
+chtype ncurses_ACS_RTEE() { return ACS_RTEE; }
+chtype ncurses_ACS_BTEE() { return ACS_BTEE; }
+chtype ncurses_ACS_TTEE() { return ACS_TTEE; }
+chtype ncurses_ACS_HLINE() { return ACS_HLINE; }
+chtype ncurses_ACS_VLINE() { return ACS_VLINE; }
+chtype ncurses_ACS_PLUS() { return ACS_PLUS; }
+chtype ncurses_ACS_S1() { return ACS_S1; }
+chtype ncurses_ACS_S9() { return ACS_S9; }
+chtype ncurses_ACS_DIAMOND() { return ACS_DIAMOND; }
+chtype ncurses_ACS_CKBOARD() { return ACS_CKBOARD; }
+chtype ncurses_ACS_DEGREE() { return ACS_DEGREE; }
+chtype ncurses_ACS_PLMINUS() { return ACS_PLMINUS; }
+chtype ncurses_ACS_BULLET() { return ACS_BULLET; }
+chtype ncurses_ACS_LARROW() { return ACS_LARROW; }
+chtype ncurses_ACS_RARROW() { return ACS_RARROW; }
+chtype ncurses_ACS_DARROW() { return ACS_DARROW; }
+chtype ncurses_ACS_UARROW() { return ACS_UARROW; }
+chtype ncurses_ACS_BOARD() { return ACS_BOARD; }
+chtype ncurses_ACS_LANTERN() { return ACS_LANTERN; }
+chtype ncurses_ACS_BLOCK() { return ACS_BLOCK; }
+chtype ncurses_ACS_S3() { return ACS_S3; }
+chtype ncurses_ACS_S7() { return ACS_S7; }
+chtype ncurses_ACS_LEQUAL() { return ACS_LEQUAL; }
+chtype ncurses_ACS_GEQUAL() { return ACS_GEQUAL; }
+chtype ncurses_ACS_PI() { return ACS_PI; }
+chtype ncurses_ACS_NEQUAL() { return ACS_NEQUAL; }
+chtype ncurses_ACS_STERLING() { return ACS_STERLING; }
+chtype ncurses_ACS_BSSB() { return ACS_BSSB; }
+chtype ncurses_ACS_SSBB() { return ACS_SSBB; }
+chtype ncurses_ACS_BBSS() { return ACS_BBSS; }
+chtype ncurses_ACS_SBBS() { return ACS_SBBS; }
+chtype ncurses_ACS_SBSS() { return ACS_SBSS; }
+chtype ncurses_ACS_SSSB() { return ACS_SSSB; }
+chtype ncurses_ACS_SSBS() { return ACS_SSBS; }
+chtype ncurses_ACS_BSSS() { return ACS_BSSS; }
+chtype ncurses_ACS_BSBS() { return ACS_BSBS; }
+chtype ncurses_ACS_SBSB() { return ACS_SBSB; }
+chtype ncurses_ACS_SSSS() { return ACS_SSSS; }
 
 int ncurses_COLOR_PAIR(int n) { return COLOR_PAIR(n); }
 
