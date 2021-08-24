@@ -61,7 +61,6 @@ int ncurses_A_INVIS() { return A_INVIS; }
 int ncurses_A_ALTCHARSET() { return A_ALTCHARSET; }
 int ncurses_A_CHARTEXT() { return A_CHARTEXT; }
 
-chtype ncurses_ACS_VLINE() { return ACS_VLINE; }
 chtype ncurses_ACS_ULCORNER() { return ACS_ULCORNER; }
 chtype ncurses_ACS_LLCORNER() { return ACS_LLCORNER; }
 chtype ncurses_ACS_URCORNER() { return ACS_URCORNER; }
