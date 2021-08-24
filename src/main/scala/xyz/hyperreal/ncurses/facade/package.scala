@@ -161,4 +161,6 @@ package object facade {
 
   def has_colors: Boolean = nc.has_colors
 
+  def init_color(color: Short, r: Short, g: Short, b: Short): Int = nc.init_color(color, r, g, b)
+
 }
