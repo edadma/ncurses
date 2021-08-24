@@ -6,6 +6,8 @@ class Panel private[facade] (private[facade] val panel: nc.PANEL) extends AnyVal
 
   def panel_above: Panel = new Panel(nc.panel_above(panel))
 
+  def panel_below: Panel = new Panel(nc.panel_below(panel))
+
   def show_panel: Int = nc.show_panel(panel)
 
   def hide_panel: Int = nc.hide_panel(panel)

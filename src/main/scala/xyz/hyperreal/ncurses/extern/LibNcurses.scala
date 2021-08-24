@@ -43,6 +43,7 @@ object LibNcurses {
   def wresize(win: WINDOW, lines: CInt, columns: CInt): Unit                          = extern
   def new_panel(win: WINDOW): PANEL                                                   = extern
   def panel_above(panel: PANEL): PANEL                                                = extern
+  def panel_below(panel: PANEL): PANEL                                                = extern
   def update_panels(): Unit                                                           = extern
   def doupdate: CInt                                                                  = extern
   def redrawwin(win: WINDOW): CInt                                                    = extern
