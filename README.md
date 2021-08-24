@@ -37,3 +37,32 @@ object Main extends App {
 
 }
 ```
+Ncurses library documentation
+-----------------------------
+
+The official documentation for the Ncurses library can be found at [ncurses][https://invisible-island.net/ncurses/man/ncurses.3x.html]. The official documentation for the extension libraries can be found at [panel][https://invisible-island.net/ncurses/man/panel.3x.html], [menu][https://invisible-island.net/ncurses/man/menu.3x.html], and [form][https://invisible-island.net/ncurses/man/form.3x.html].
+
+Guidelines
+----------
+
+In these guidelines, the phrase *library function* refers to the GNU Ncurses C library function that corresponds to the *wrapper method* being described.
+
+There are hundreds of functions in the GNU Ncurses C library.  Therefore, in order to be able to find library documentation corresponding to a given wrapper method or, vice versa, in order to know which wrapper method corresponds to a given library function, there needs to be clear method naming guidelines.  Also, in the case where wrapper methods have a different number of parameters or return values (in the cases where wrapper methods return a tuple) from their library function counterparts, there needs to be clear method parameter and return type guidelines.
+
+### Methods that return a tuple
+
+There are a few wrapper methods that return a tuple. If the library function has a return value, then the first component of that tuple shall be the library function return value. The remaining components shall be values that are returned via pointer arguments to the library function.
+
+### Value class method names
+
+The Ncurses library already follows a certain naming convention fairly consistently:
+- function names prefixed with "w" are window operations
+- function names prefixed with "mv" are output operations that also move the cursor to a new position first
+- function names prefixed with "mvw" are a combination of the above
+- in many, but not all cases function names prefixed with "w" and "mvw" have corresponding `stdscr` functions without the "w" in the name prefix.
+
+The guideline being followed here is that window operation functions with a "w" in their prefix that have a corresponding `stdscr` version of the function (without the "w"), shall have a corresponding `Window` wrapper method that drops the "w" in the name prefix. However, window operation functions with a "w" in their prefix that do not have a corresponding `stdscr` version of the function at all shall keep the "w" in the name prefix.  This rule makes it easier to look up documentation for corresponding library functions. 
+
+### Value class method parameters
+
+All value class methods correspond to library functions whose first parameter has a pointer type corresponding to the underlying runtime pointer type of the value class.  Therefore, the wrapper method doesn't have that first parameter.

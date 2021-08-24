@@ -7,10 +7,11 @@ import scala.scalanative.unsafe._
 @extern
 object LibNcurses {
 
-  type WINDOW = Ptr[Byte]
-  type PANEL  = Ptr[Byte]
-  type chtype = CUnsignedInt
-  type attr_t = chtype
+  type WINDOW  = Ptr[Byte]
+  type PANEL   = Ptr[Byte]
+  type chtype  = CUnsignedInt
+  type attr_t  = chtype
+  type mmask_t = CUnsignedInt
 
   val stdscr: WINDOW = extern
 
@@ -57,7 +58,8 @@ object LibNcurses {
               tl: chtype,
               tr: chtype,
               bl: chtype,
-              br: chtype): CInt = extern
+              br: chtype): CInt                                   = extern
+  def mousemask(newmask: mmask_t, oldmask: Ptr[mmask_t]): mmask_t = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern

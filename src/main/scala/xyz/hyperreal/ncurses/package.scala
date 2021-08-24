@@ -1,6 +1,7 @@
 package xyz.hyperreal
 
 import ncurses.{LibNcurses => nc}
+import xyz.hyperreal.ncurses.LibNcurses.mmask_t
 
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
@@ -114,5 +115,11 @@ package object ncurses {
   def mvhline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvhline(y, x, ch.toUInt, n)
 
   def mvvline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvvline(y, x, ch.toUInt, n)
+
+  def mousemask(newmask: Int, oldmask: Ptr[mmask_t]): (Int, Int) = {
+    val oldmask = stackalloc[CUnsignedInt]
+
+    (nc.mousemask(newmask.toUInt, oldmask).toInt, (!oldmask).toInt)
+  }
 
 }
