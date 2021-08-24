@@ -14,4 +14,6 @@ class Panel private[facade] (private[facade] val panel: nc.PANEL) extends AnyVal
 
   def bottom_panel: Int = nc.bottom_panel(panel)
 
+  def del_panel: Int = nc.del_panel(panel)
+
 }

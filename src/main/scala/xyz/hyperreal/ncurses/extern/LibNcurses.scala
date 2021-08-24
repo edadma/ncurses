@@ -74,6 +74,7 @@ object LibNcurses {
   def hide_panel(pan: PANEL): CInt                                                   = extern
   def top_panel(pan: PANEL): CInt                                                    = extern
   def bottom_panel(pan: PANEL): CInt                                                 = extern
+  def del_panel(pan: PANEL): CInt                                                    = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
