@@ -22,7 +22,7 @@ Usage
 Obligatory "Hello World" example
 --------------------------------
 
-The following basic example, which asks the user to type something and then displays what was entered, shows a typical use of the library.
+The following basic example, translated from [Example 4](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/scanw.html) of the well-known [NCURSES Programming HOWTO](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/), shows a typical use of the library.
 
 ```scala
 import xyz.hyperreal.ncurses.facade._
