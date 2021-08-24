@@ -1,4 +1,4 @@
-import xyz.hyperreal.ncurses._
+import xyz.hyperreal.ncurses.facade._
 
 object Main extends App {
 

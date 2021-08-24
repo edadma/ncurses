@@ -1,12 +1,11 @@
-package xyz.hyperreal.ncurses
+package xyz.hyperreal.ncurses.facade
 
-import xyz.hyperreal.ncurses.{LibNcurses => nc}
-import nc.{WINDOW, attr_t}
+import xyz.hyperreal.ncurses.extern.{LibNcurses => nc}
 
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
 
-class Window private[ncurses] (private[ncurses] val win: WINDOW) extends AnyVal {
+class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal {
 
   def printw(fmt: String, args: Any*): CInt = Zone(implicit z => nc.vw_printw(win, toCString(fmt), varargs(args)))
 
@@ -99,7 +98,7 @@ class Window private[ncurses] (private[ncurses] val win: WINDOW) extends AnyVal 
 
   def refresh: Int = nc.wrefresh(win)
 
-  def box(win: WINDOW, verch: Int, horch: Int): Int = nc.box(win, verch.toUInt, horch.toUInt)
+  def box(verch: Int, horch: Int): Int = nc.box(win, verch.toUInt, horch.toUInt)
 
   def border(ls: Int, rs: Int, ts: Int, bs: Int, tl: Int, tr: Int, bl: Int, br: Int): Int =
     nc.wborder(win, ls.toUInt, rs.toUInt, ts.toUInt, bs.toUInt, tl.toUInt, tr.toUInt, bl.toUInt, br.toUInt)

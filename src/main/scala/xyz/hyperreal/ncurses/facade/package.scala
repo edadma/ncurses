@@ -1,12 +1,11 @@
-package xyz.hyperreal
+package xyz.hyperreal.ncurses
 
-import ncurses.{LibNcurses => nc}
-import xyz.hyperreal.ncurses.LibNcurses.mmask_t
+import xyz.hyperreal.ncurses.extern.{LibNcurses => nc}
 
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
 
-package object ncurses {
+package object facade {
 
   lazy val stdscr             = new Window(nc.stdscr)
   lazy val KEY_DOWN: Int      = nc.KEY_DOWN
@@ -36,7 +35,7 @@ package object ncurses {
   lazy val A_CHARTEXT: Int    = nc.A_CHARTEXT
   lazy val ACS_VLINE: Int     = nc.ACS_VLINE.toInt
 
-  private[ncurses] def varargs(args: Seq[Any])(implicit z: Zone) =
+  private[facade] def varargs(args: Seq[Any])(implicit z: Zone) =
     toCVarArgList(
       args
         map {
@@ -116,7 +115,7 @@ package object ncurses {
 
   def mvvline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvvline(y, x, ch.toUInt, n)
 
-  def mousemask(newmask: Int, oldmask: Ptr[mmask_t]): (Int, Int) = {
+  def mousemask(newmask: Int): (Int, Int) = {
     val oldmask = stackalloc[CUnsignedInt]
 
     (nc.mousemask(newmask.toUInt, oldmask).toInt, (!oldmask).toInt)

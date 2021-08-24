@@ -1,4 +1,4 @@
-package xyz.hyperreal.ncurses
+package xyz.hyperreal.ncurses.extern
 
 import scala.scalanative.unsafe._
 

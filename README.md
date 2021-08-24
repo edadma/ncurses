@@ -6,6 +6,8 @@ ncurses
 Obligatory "Hello World" example
 --------------------------------
 
+The following basic example, which asks the user to type something and then displays what was entered shows a typical use of the library.
+
 ```scala
 import xyz.hyperreal.ncurses._
 
@@ -37,6 +39,9 @@ object Main extends App {
 
 }
 ```
+
+The entire "Scala-esque" part of this library is in the `xyz.hyperreal.ncurses.facade` package.
+
 Ncurses library documentation
 -----------------------------
 
