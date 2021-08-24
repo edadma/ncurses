@@ -1,12 +1,17 @@
 ncurses
 =======
 
-*ncurses* provides bindings for the GNU Ncurses library.  This package is a work in progress as there are hundreds of functions in the Ncurses library.  Nonetheless, this package is quite usable as is.  `libncurses-dev` needs to be installed.
+*ncurses* provides Scala Native bindings for the GNU Ncurses library.  This package is a work in progress as there are hundreds of functions in the Ncurses library.  Nonetheless, this package is quite usable as is.  `libncurses-dev` needs to be installed.
+
+Overview
+--------
+
+The entire "Scala-esque" part of this library is found in the `xyz.hyperreal.ncurses.facade` package.  That's the only package you need to import from, as seen in the example below.  The other package in the library is `xyz.hyperreal.ncurses.extern` which provides for interaction with the Ncurses C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `xyz.hyperreal.ncurses.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Specifically, you never have to worry about memory allocation or type conversions.
 
 Obligatory "Hello World" example
 --------------------------------
 
-The following basic example, which asks the user to type something and then displays what was entered shows a typical use of the library.
+The following basic example, which asks the user to type something and then displays what was entered, shows a typical use of the library.
 
 ```scala
 import xyz.hyperreal.ncurses.facade._
@@ -40,10 +45,8 @@ object Main extends App {
 }
 ```
 
-The entire "Scala-esque" part of this library is found in the `xyz.hyperreal.ncurses.facade` package.  That's the only package you need to import from, as seen in the above example.  The other package in the library is `xyz.hyperreal.ncurses.extern` which provides for interaction with the library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no `unsafe` imports in the `xyz.hyperreal.ncurses.facade` package making it a pure Scala facade.
-
-Ncurses library documentation
------------------------------
+Ncurses C library documentation
+-------------------------------
 
 The official documentation for the Ncurses library can be found at [ncurses][https://invisible-island.net/ncurses/man/ncurses.3x.html]. The official documentation for the extension libraries can be found at [panel][https://invisible-island.net/ncurses/man/panel.3x.html], [menu][https://invisible-island.net/ncurses/man/menu.3x.html], and [form][https://invisible-island.net/ncurses/man/form.3x.html].
 
