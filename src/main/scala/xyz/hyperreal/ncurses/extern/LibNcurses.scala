@@ -12,6 +12,7 @@ object LibNcurses {
   type chtype  = CUnsignedInt
   type attr_t  = chtype
   type mmask_t = CUnsignedInt
+  type MEVENT  = CStruct5[CShort, CInt, CInt, CInt, CUnsignedInt]
 
   val stdscr: WINDOW = extern
 
@@ -60,6 +61,8 @@ object LibNcurses {
               bl: chtype,
               br: chtype): CInt                                   = extern
   def mousemask(newmask: mmask_t, oldmask: Ptr[mmask_t]): mmask_t = extern
+  def mouseinterval(interval: CInt): CInt                         = extern
+  def getmouse(event: Ptr[MEVENT]): CInt                          = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
