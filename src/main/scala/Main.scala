@@ -14,7 +14,7 @@ object Main extends App {
 
     noecho
     curs_set(0)
-    mvaddstr(rows - 1, 0, s"You entered: $str")
+    mvaddstr(LINES - 1, 0, s"You entered: $str")
     getch
   } catch {
     case e: Exception =>
