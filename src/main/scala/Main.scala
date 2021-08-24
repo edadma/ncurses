@@ -76,29 +76,31 @@ mousemask(ALL_MOUSE_EVENTS)
 mouseinterval(0)
 
 while (true) {
-  c = menu_win.getch;
+  c = menu_win.getch
+
   c match {
-    case KEY_MOUSE =>
-      if (getmouse(&event) == OK) { /* When the user clicks left mouse button */
+    case `KEY_MOUSE` =>
+      val (res, event) = getmouse
+
+      if (res == OK) { /* When the user clicks left mouse button */
         if (event.bstate & BUTTON1_PRESSED) {
           report_choice(event.x + 1, event.y + 1, &choice);
-          if (choice == -1)//Exit chosen
-            goto end;
+          if (choice == -1) { //Exit chosen
+            endwin
+            sys.exit
+          }
+
           mvprintw(LINES - 2, 1, "Choice made is : %d String Chosen is \"%10s\"", choice, choices[choice - 1]);
-          refresh();
+          refresh
         }
       }
         print_menu(menu_win, choice);
-    break;
   }
 }
-end:
-  endwin();
-return 0;
 }
 
 
-void print_menu(WINDOW *menu_win, int highlight) {
+def print_menu(WINDOW *menu_win, int highlight) {
 int x, y, i;
 
 x = 2;

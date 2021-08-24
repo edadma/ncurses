@@ -129,11 +129,10 @@ package object facade {
 
   def mouseinterval(interval: Int): Int = nc.mouseinterval(interval)
 
-  def getmouse: MEvent = {
+  def getmouse: (Int, MEvent) = {
     val event = stackalloc[nc.MEVENT]
 
-    nc.getmouse(event)
-    MEvent(event._1, event._2, event._3, event._5.toInt)
+    (nc.getmouse(event), MEvent(event._1, event._2, event._3, event._5.toInt))
   }
 
 }
