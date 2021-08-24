@@ -9,7 +9,7 @@ Obligatory "Hello World" example
 The following basic example, which asks the user to type something and then displays what was entered shows a typical use of the library.
 
 ```scala
-import xyz.hyperreal.ncurses._
+import xyz.hyperreal.ncurses.facade._
 
 object Main extends App {
 
@@ -40,7 +40,7 @@ object Main extends App {
 }
 ```
 
-The entire "Scala-esque" part of this library is in the `xyz.hyperreal.ncurses.facade` package.
+The entire "Scala-esque" part of this library is found in the `xyz.hyperreal.ncurses.facade` package.  That's the only package you need to import from, as seen in the above example.  The other package in the library is `xyz.hyperreal.ncurses.extern` which provides for interaction with the library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no `unsafe` imports in the `xyz.hyperreal.ncurses.facade` package making it a pure Scala facade.
 
 Ncurses library documentation
 -----------------------------
