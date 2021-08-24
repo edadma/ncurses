@@ -10,6 +10,8 @@ package object facade {
   case class MEvent(id: Int, x: Int, y: Int, bstate: Int)
 
   lazy val stdscr             = new Window(nc.stdscr)
+  lazy val LINES: Int         = nc.LINES
+  lazy val COLS: Int          = nc.COLS
   lazy val KEY_DOWN: Int      = nc.KEY_DOWN
   lazy val KEY_UP: Int        = nc.KEY_UP
   lazy val KEY_LEFT: Int      = nc.KEY_LEFT

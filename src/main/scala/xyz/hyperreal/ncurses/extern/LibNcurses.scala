@@ -15,6 +15,8 @@ object LibNcurses {
   type MEVENT  = CStruct5[CShort, CInt, CInt, CInt, CUnsignedInt]
 
   val stdscr: WINDOW = extern
+  val LINES: CInt    = extern
+  val COLS: CInt     = extern
 
   def initscr: WINDOW                                                                 = extern
   def cbreak: CInt                                                                    = extern
