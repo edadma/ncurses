@@ -8,6 +8,12 @@ Overview
 
 The entire "Scala-esque" part of this library is found in the `xyz.hyperreal.ncurses.facade` package.  That's the only package you need to import from, as seen in the example below.  The other package in the library is `xyz.hyperreal.ncurses.extern` which provides for interaction with the Ncurses C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `xyz.hyperreal.ncurses.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Specifically, you never have to worry about memory allocation or type conversions.
 
+### A note on efficiency
+
+All facade classes that relate to screen output are [Scala value classes](https://docs.scala-lang.org/overviews/core/value-classes.html) which means that we can have a nice "Scala-esque" facade without sacrificing efficiency. Thanks to Scala's value classes, we can wrap native pointers to Ncurses data structures without the overhead of object instantiation.
+
+There is a facade class relating to responding to mouse events that is not a value class, but it only gets instantiated when there's a mouse click and therefore does not affect screen output efficiency.
+
 Usage
 -----
 
@@ -61,6 +67,8 @@ Guidelines
 In these guidelines, the phrase *library function* refers to the GNU Ncurses C library function that has a corresponding method in this library.  Likewise, the phrase *facade method* refers to a method in this library that has a corresponding function in the GNU Ncurses library.
 
 There are hundreds of functions in the GNU Ncurses C library.  Therefore, in order to be able to find library documentation corresponding to a given facade method or, vice versa, in order to know which facade method corresponds to a given library function, there needs to be clear method naming guidelines.  Also, in the case where facade methods have a different number of parameters or return values (in the cases where facade methods return a tuple) from their library function counterparts, there needs to be clear method parameter and return type guidelines.
+
+The following are the guidelines being adhered to.
 
 ### Methods that return a tuple
 

@@ -7,6 +7,8 @@ import scala.scalanative.unsigned._
 
 package object facade {
 
+  case class MEvent(id: Int, x: Int, y: Int, bstate: Int)
+
   lazy val stdscr             = new Window(nc.stdscr)
   lazy val KEY_DOWN: Int      = nc.KEY_DOWN
   lazy val KEY_UP: Int        = nc.KEY_UP
