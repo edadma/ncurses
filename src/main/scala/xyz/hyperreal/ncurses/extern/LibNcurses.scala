@@ -186,5 +186,33 @@ object LibNcurses {
   def mvvline(y: CInt, x: CInt, ch: chtype, n: CInt): CInt = extern
   @name("ncurses_ALL_MOUSE_EVENTS")
   def ALL_MOUSE_EVENTS: mmask_t = extern
+  @name("ncurses_BUTTON1_RELEASED")
+  def BUTTON1_RELEASED: mmask_t = extern
+  @name("ncurses_BUTTON1_PRESSED")
+  def BUTTON1_PRESSED: mmask_t = extern
+  @name("ncurses_BUTTON1_CLICKED")
+  def BUTTON1_CLICKED: mmask_t = extern
+  @name("ncurses_BUTTON1_DOUBLE_CLICKED")
+  def BUTTON1_DOUBLE_CLICKED: mmask_t = extern
+  @name("ncurses_BUTTON1_TRIPLE_CLICKED")
+  def BUTTON1_TRIPLE_CLICKED: mmask_t = extern
+  @name("ncurses_BUTTON2_RELEASED")
+  def BUTTON2_RELEASED: mmask_t = extern
+  @name("ncurses_BUTTON2_PRESSED")
+  def BUTTON2_PRESSED: mmask_t = extern
+  @name("ncurses_BUTTON2_CLICKED")
+  def BUTTON2_CLICKED: mmask_t = extern
+  @name("ncurses_BUTTON2_DOUBLE_CLICKED")
+  def BUTTON2_DOUBLE_CLICKED: mmask_t = extern
+  @name("ncurses_BUTTON2_TRIPLE_CLICKED")
+  def BUTTON2_TRIPLE_CLICKED: mmask_t = extern
+  @name("ncurses_BUTTON_CTRL")
+  def BUTTON_CTRL: mmask_t = extern
+  @name("ncurses_BUTTON_SHIFT")
+  def BUTTON_SHIFT: mmask_t = extern
+  @name("ncurses_BUTTON_ALT")
+  def BUTTON_ALT: mmask_t = extern
+  @name("ncurses_REPORT_MOUSE_POSITION")
+  def REPORT_MOUSE_POSITION: mmask_t = extern
 
 }

@@ -90,7 +90,7 @@ while (true) {
             sys.exit
           }
 
-          mvprintw(LINES - 2, 1, "Choice made is : %d String Chosen is \"%10s\"", choice, choices[choice - 1]);
+          mvprintw(LINES - 2, 1, "Choice made is : %d String Chosen is \"%10s\"", choice, choices(choice - 1));
           refresh
         }
       }
@@ -100,8 +100,8 @@ while (true) {
 }
 
 
-def print_menu(WINDOW *menu_win, int highlight) {
-int x, y, i;
+def print_menu(menu_win: Window,  highlight: Int) {
+var x, y, i: Int
 
 x = 2;
 y = 2;

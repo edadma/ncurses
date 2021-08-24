@@ -65,4 +65,18 @@ chtype ncurses_ACS_VLINE() { return ACS_VLINE; }
 
 int ncurses_COLOR_PAIR(int n) { return COLOR_PAIR(n); }
 
-int ncurses_ALL_MOUSE_EVENTS() { return ALL_MOUSE_EVENTS; }
+mmask_t ncurses_ALL_MOUSE_EVENTS() { return ALL_MOUSE_EVENTS; }
+mmask_t ncurses_BUTTON1_RELEASED() { return BUTTON1_RELEASED; }
+mmask_t ncurses_BUTTON1_PRESSED() { return BUTTON1_PRESSED; }
+mmask_t ncurses_BUTTON1_CLICKED() { return BUTTON1_CLICKED; }
+mmask_t ncurses_BUTTON1_DOUBLE_CLICKED() { return BUTTON1_DOUBLE_CLICKED; }
+mmask_t ncurses_BUTTON1_TRIPLE_CLICKED() { return BUTTON1_TRIPLE_CLICKED; }
+mmask_t ncurses_BUTTON2_RELEASED() { return BUTTON2_RELEASED; }
+mmask_t ncurses_BUTTON2_PRESSED() { return BUTTON2_PRESSED; }
+mmask_t ncurses_BUTTON2_CLICKED() { return BUTTON2_CLICKED; }
+mmask_t ncurses_BUTTON2_DOUBLE_CLICKED() { return BUTTON2_DOUBLE_CLICKED; }
+mmask_t ncurses_BUTTON2_TRIPLE_CLICKED() { return BUTTON2_TRIPLE_CLICKED; }
+mmask_t ncurses_BUTTON_CTRL() { return BUTTON_CTRL; }
+mmask_t ncurses_BUTTON_SHIFT() { return BUTTON_SHIFT; }
+mmask_t ncurses_BUTTON_ALT() { return BUTTON_ALT; }
+mmask_t ncurses_REPORT_MOUSE_POSITION() { return REPORT_MOUSE_POSITION; }
