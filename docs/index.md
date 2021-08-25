@@ -6,7 +6,9 @@ ncurses
 Overview
 --------
 
-The more "Scala-esque" part of this library is found in the `io.github.edadma.ncurses.facade` package.  That's the only package you need to import from, as seen in the examples below.  The other package in the library is `io.github.edadma.ncurses.extern` which provides for interaction with the Ncurses C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `io.github.edadma.ncurses.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Specifically, you never have to worry about memory allocation or type conversions.
+The goal of this project is to provide an easy to use Scala Native facade for the entire Ncurses C library, including the [panel](https://invisible-island.net/ncurses/man/panel.3x.html), [menu](https://invisible-island.net/ncurses/man/menu.3x.html) and [form](https://invisible-island.net/ncurses/man/form.3x.html) extension libraries. This project is active and will be kept up-to-date with respect to Scala Native releases.
+
+The more "programmer friendly" part of this library is found in the `io.github.edadma.ncurses.facade` package.  That's the only package you need to import from, as seen in the examples below.  The other package in the library is `io.github.edadma.ncurses.extern` which provides for interaction with the Ncurses C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `io.github.edadma.ncurses.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Specifically, you never have to worry about memory allocation or type conversions.
 
 ### Efficient screen output
 
@@ -16,7 +18,7 @@ There is one facade class relating to responding to mouse events that is not a v
 
 ### Library coverage and usability
 
-Ultimately, the goal of this project is to provide a facade for the entire Ncurses C library, including the [panel](https://invisible-island.net/ncurses/man/panel.3x.html), [menu](https://invisible-island.net/ncurses/man/menu.3x.html) and [form](https://invisible-island.net/ncurses/man/form.3x.html) extension libraries. Currently, a large part of the basic [Ncurses](https://invisible-island.net/ncurses/man/ncurses.3x.html) library is covered, as well as most of the "panel" library.  Each subsequent release will see more ncurses functions and variables added, and each minor release will include support for another extension library (support for menus is next).
+Currently, a large part of the basic [Ncurses](https://invisible-island.net/ncurses/man/ncurses.3x.html) library is covered, as well as most of the "panel" library.  Each subsequent release will see more ncurses functions and variables added, and each minor release will include support for another extension library (support for menus is next).
 
 As it stands now, this library is very usable and can be used to implement a wide variety of terminal applications in Scala.  Of course, as with any terminal application, the terminal emulator that you run it on can make a difference.  The terminal inside [IntelliJ](https://www.jetbrains.com/idea/), for instance doesn't do mouse events, so to really test the library, I've been using [Tilix](https://gnunn1.github.io/tilix-web/) which has been working great.
 
