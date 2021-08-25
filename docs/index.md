@@ -46,7 +46,9 @@ Examples
 
 The following examples are taken from the well-known [NCURSES Programming HOWTO](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/) with only slight changes where needed.
 
-### [Example 1](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/helloworld.html) (the obligatory "Hello World" example)
+### [Example 1](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/helloworld.html)
+
+The obligatory "Hello World" example.
 
 ```scala
 import io.github.edadma.ncurses.facade._
@@ -61,6 +63,8 @@ object Main extends App {
 ```
 
 ### [Example 4](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/scanw.html)
+
+Basic keyboard input example.
 
 ```scala
 import io.github.edadma.ncurses.facade._
