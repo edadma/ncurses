@@ -1,6 +1,6 @@
 name := "ncurses"
 
-version := "0.2.0"
+version := "0.2.1"
 
 scalaVersion := "2.13.6"
 
@@ -19,15 +19,13 @@ scalacOptions ++= Seq("-deprecation",
                       "-language:implicitConversions",
                       "-language:existentials")
 
-organization := "xyz.hyperreal"
+organization := "io.github.edadma"
 
 githubOwner := "edadma"
 
 githubRepository := name.value
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
-
-resolvers += "Typesafe Repository" at "https://repo.typesafe.com/typesafe/releases/"
 
 resolvers += Resolver.githubPackages("edadma")
 

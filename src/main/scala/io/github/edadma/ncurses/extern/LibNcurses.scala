@@ -1,8 +1,6 @@
-package xyz.hyperreal.ncurses.extern
+package io.github.edadma.ncurses.extern
 
 import scala.scalanative.unsafe._
-
-
 @link("panel")
 @link("ncurses")
 @extern
@@ -30,6 +28,10 @@ object LibNcurses {
   def wmove(win: WINDOW, y: CInt, x: CInt): CInt                                      = extern
   def waddnstr(win: WINDOW, str: CString, n: CInt): CInt                              = extern
   def waddch(win: WINDOW, ch: chtype): CInt                                           = extern
+  def mvaddch(x: CInt, n: CInt, ch: chtype): CInt                                     = extern
+  def mvwaddch(win: WINDOW, x: CInt, n: CInt, ch: chtype): CInt                       = extern
+  def echochar(ch: chtype): CInt                                                      = extern
+  def wechochar(win: WINDOW, ch: chtype): CInt                                        = extern
   def keypad(win: WINDOW, bf: CBool): CInt                                            = extern
   def wclrtoeol(win: WINDOW): CInt                                                    = extern
   def wclrtobot(win: WINDOW): CInt                                                    = extern
@@ -278,8 +280,6 @@ object LibNcurses {
   def mvchgat(y: CInt, x: CInt, n: CInt, attr: attr_t, pair: CShort, opts: Ptr[Byte]): CInt = extern
   @name("ncurses_box")
   def box(win: WINDOW, verch: chtype, horch: chtype): CInt = extern
-  @name("ncurses_mvaddch")
-  def mvaddch(x: CInt, n: CInt, ch: chtype): CInt = extern
   @name("ncurses_mvhline")
   def mvhline(y: CInt, x: CInt, ch: chtype, n: CInt): CInt = extern
   @name("ncurses_mvvline")

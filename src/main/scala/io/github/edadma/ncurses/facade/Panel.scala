@@ -1,6 +1,6 @@
-package xyz.hyperreal.ncurses.facade
+package io.github.edadma.ncurses.facade
 
-import xyz.hyperreal.ncurses.extern.{LibNcurses => nc}
+import io.github.edadma.ncurses.extern.{LibNcurses => nc}
 
 class Panel private[facade] (private[facade] val panel: nc.PANEL) extends AnyVal {
 

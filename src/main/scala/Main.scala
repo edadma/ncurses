@@ -1,5 +1,14 @@
+//import io.github.edadma.ncurses.facade._
+//
+//object Main extends App {
+//  initscr
+//  stdscr.mvaddch(1, 1, 'a')
+//  getch
+//  endwin
+//}
+
 //ex 1
-//import xyz.hyperreal.ncurses.facade._
+//import io.github.edadma.ncurses.facade._
 //
 //object Main extends App {
 //  initscr /* Start curses mode */
@@ -10,7 +19,7 @@
 //}
 
 //ex 4
-//import xyz.hyperreal.ncurses.facade._
+//import io.github.edadma.ncurses.facade._
 //
 //object Main extends App {
 //
@@ -40,7 +49,7 @@
 //}
 
 //ex 11
-//import xyz.hyperreal.ncurses.facade._
+//import io.github.edadma.ncurses.facade._
 //
 //import scala.collection.immutable.ArraySeq
 //

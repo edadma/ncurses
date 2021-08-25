@@ -1,6 +1,6 @@
-package xyz.hyperreal.ncurses
+package io.github.edadma.ncurses
 
-import xyz.hyperreal.ncurses.extern.{LibNcurses => nc}
+import io.github.edadma.ncurses.extern.{LibNcurses => nc}
 
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
@@ -132,6 +132,8 @@ package object facade {
   def addstr(s: String): Int = Zone(implicit z => nc.addstr(toCString(s)))
 
   def addch(ch: Int): Int = nc.addch(ch.toUInt)
+
+  def echochar(ch: Int): CInt = nc.echochar(ch.toUInt)
 
   def refresh: Int = nc.refresh
 

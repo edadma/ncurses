@@ -1,17 +1,18 @@
-package xyz.hyperreal.ncurses.facade
+package io.github.edadma.ncurses.facade
 
-import xyz.hyperreal.ncurses.extern.{LibNcurses => nc}
+import io.github.edadma.ncurses.extern.LibNcurses
+import io.github.edadma.ncurses.extern.{LibNcurses => nc}
 
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
 
-class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal {
+class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extends AnyVal {
 
-  def printw(fmt: String, args: Any*): CInt = Zone(implicit z => nc.vw_printw(win, toCString(fmt), varargs(args)))
+  def printw(fmt: String, args: Any*): Int = Zone(implicit z => nc.vw_printw(win, toCString(fmt), varargs(args)))
 
   def move(y: Int, x: Int): Int = nc.wmove(win, y, x)
 
-  def mvprintw(y: Int, x: Int, fmt: String, args: Any*): CInt = {
+  def mvprintw(y: Int, x: Int, fmt: String, args: Any*): Int = {
     move(y, x)
     printw(fmt, args: _*)
   }
@@ -27,6 +28,10 @@ class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal
   def mvaddstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvwaddstr(win, y, x, toCString(str)))
 
   def addch(ch: Int): Int = nc.waddch(win, ch.toUInt)
+
+  def mvaddch(y: Int, x: Int, ch: Int): Int = nc.mvwaddch(win, y, x, ch.toUInt)
+
+  def echochar(ch: Int): Int = nc.wechochar(win, ch.toUInt)
 
   def keypad(bf: Boolean): Int = nc.keypad(win, bf)
 

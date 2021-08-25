@@ -28,7 +28,6 @@ int ncurses_mvwchgat(WINDOW *win, int y, int x, int n, attr_t attr, short pair, 
 int ncurses_chgat(int n, attr_t attr, short pair, const void *opts) { return chgat( n, attr, pair, opts); }
 int ncurses_mvchgat(int y, int x, int n, attr_t attr, short pair, const void *opts) { return mvchgat(y, x, n, attr, pair, opts); }
 int ncurses_box(WINDOW *win, chtype verch, chtype horch) { return box(win, verch, horch); }
-int ncurses_mvaddch(int y, int x, const chtype ch) { return mvaddch(y, x, ch); }
 int ncurses_mvhline(int y, int x, chtype ch, int n) { return mvhline(y, x, ch, n); }
 int ncurses_mvvline(int y, int x, chtype ch, int n) { return mvvline(y, x, ch, n); }
 
