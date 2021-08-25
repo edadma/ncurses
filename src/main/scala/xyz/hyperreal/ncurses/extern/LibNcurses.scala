@@ -2,6 +2,7 @@ package xyz.hyperreal.ncurses.extern
 
 import scala.scalanative.unsafe._
 
+
 @link("panel")
 @link("ncurses")
 @extern
@@ -76,11 +77,15 @@ object LibNcurses {
   def top_panel(pan: PANEL): CInt                                                    = extern
   def bottom_panel(pan: PANEL): CInt                                                 = extern
   def del_panel(pan: PANEL): CInt                                                    = extern
+  def wnoutrefresh(win: WINDOW): CInt                                                = extern
+  def werase(win: WINDOW): CInt                                                      = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
   @name("ncurses_getch")
   def getch: CInt = extern
+  @name("ncurses_erase")
+  def erase: CInt = extern
   @name("ncurses_scrl")
   def scrl(n: CInt): CInt = extern
   @name("ncurses_move")

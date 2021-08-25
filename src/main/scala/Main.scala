@@ -1,4 +1,15 @@
-//ex4
+//ex 1
+//import xyz.hyperreal.ncurses.facade._
+//
+//object Main extends App {
+//  initscr /* Start curses mode */
+//  printw("Hello World !!!"); /* Print Hello World */
+//  refresh /* Print it on to the real screen */
+//  getch /* Wait for user input */
+//  endwin /* End curses mode */
+//}
+
+//ex 4
 //import xyz.hyperreal.ncurses.facade._
 //
 //object Main extends App {
@@ -28,7 +39,7 @@
 //
 //}
 
-//ex11
+//ex 11
 //import xyz.hyperreal.ncurses.facade._
 //
 //import scala.collection.immutable.ArraySeq

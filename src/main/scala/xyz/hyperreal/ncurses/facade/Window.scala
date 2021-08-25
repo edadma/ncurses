@@ -112,4 +112,8 @@ class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal
     (nc.wmouse_trafo(win, py, px, to_screen), !py, !px)
   }
 
+  def wnoutrefresh: Int = nc.wnoutrefresh(win)
+
+  def erase: Int = nc.werase(win)
+
 }

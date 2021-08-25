@@ -218,4 +218,6 @@ package object facade {
 
   def reset_prog_mode: Int = nc.def_prog_mode
 
+  def erase: Int = nc.erase
+
 }

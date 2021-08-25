@@ -1,14 +1,12 @@
 ncurses
 =======
 
-*ncurses* provides Scala Native bindings for the GNU Ncurses library.  This package is a work in progress as there are hundreds of functions in the Ncurses C library.  Nonetheless, this library is quite usable as is.
+*ncurses* provides Scala Native bindings for the GNU Ncurses C library.
 
 Overview
 --------
 
-The entire "Scala-esque" part of this library is found in the `xyz.hyperreal.ncurses.facade` package.  That's the only package you need to import from, as seen in the example below.  The other package in the library is `xyz.hyperreal.ncurses.extern` which provides for interaction with the Ncurses C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `xyz.hyperreal.ncurses.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Specifically, you never have to worry about memory allocation or type conversions.
-
-### A note on efficiency
+The entire "Scala-esque" part of this library is found in the `xyz.hyperreal.ncurses.facade` package.  That's the only package you need to import from, as seen in the examples below.  The other package in the library is `xyz.hyperreal.ncurses.extern` which provides for interaction with the Ncurses C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `xyz.hyperreal.ncurses.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Specifically, you never have to worry about memory allocation or type conversions.
 
 All facade classes that relate to screen output are [Scala value classes](https://docs.scala-lang.org/overviews/core/value-classes.html) which means that we can have a nice "Scala-esque" facade without sacrificing efficiency. Thanks to Scala's value classes, we can wrap native pointers to Ncurses data structures without the overhead of object instantiation.
 
@@ -19,10 +17,26 @@ Usage
 
 `libncurses-dev` needs to be installed.
 
-Obligatory "Hello World" example
---------------------------------
+Examples
+--------
 
-The following basic example, translated from [Example 4](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/scanw.html) of the well-known [NCURSES Programming HOWTO](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/), shows a typical use of the library.
+The following examples are taken from the well-known [NCURSES Programming HOWTO](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/) with only slight changes where needed.
+
+### [Example 1](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/helloworld.html) (the obligatory "Hello World" example)
+
+```scala
+import xyz.hyperreal.ncurses.facade._
+
+object Main extends App {
+  initscr                     /* Start curses mode */
+  printw("Hello World !!!");  /* Print Hello World */
+  refresh                     /* Print it on to the real screen */
+  getch                       /* Wait for user input */
+  endwin                      /* End curses mode */
+}
+```
+
+### [Example 4](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/scanw.html)
 
 ```scala
 import xyz.hyperreal.ncurses.facade._
