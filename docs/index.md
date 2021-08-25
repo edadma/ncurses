@@ -109,9 +109,7 @@ The following are the guidelines being adhered to.
 
 ### Naming
 
-In general, the names of almost all facade methods, variables and constants shall be exactly the same as their library counterparts.  This guideline will make it easier to lookup documentation for a given library function or variable.  And, vice versa, this will make it easy to know the name for a facade counterpart to a given library function or variable.  There are a number of exceptions to this guideline arising from the "Value class method names" guideline.
-
-Because of how the GNU Ncurses library documentation is organized, the exceptions mentioned above won't cause a problem in finding relevant documentation.
+In general, the names of almost all facade methods, variables and constants shall be exactly the same as their library counterparts.  This guideline will make it easier to lookup documentation for a given library function or variable.  And, vice versa, this will make it easy to know the name for a facade counterpart to a given library function or variable.  There are a number of exceptions to this guideline arising from the "Value class method names" guideline, however because of how the GNU Ncurses library documentation is organized, those exceptions won't cause a problem in finding relevant documentation.
 
 ### Methods that return a tuple
 
