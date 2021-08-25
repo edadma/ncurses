@@ -81,6 +81,8 @@ object LibNcurses {
   def del_panel(pan: PANEL): CInt                                                    = extern
   def wnoutrefresh(win: WINDOW): CInt                                                = extern
   def werase(win: WINDOW): CInt                                                      = extern
+  def beep: CInt                                                                     = extern
+  def flash: CInt                                                                    = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -356,3 +358,4 @@ object LibNcurses {
   def COLOR_WHITE: CInt = extern
 
 }
+// todo: finish adding https://invisible-island.net/ncurses/man/curs_border.3x.html, https://invisible-island.net/ncurses/man/curs_scroll.3x.html

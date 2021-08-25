@@ -234,4 +234,8 @@ package object facade {
 
   def erase: Int = nc.erase
 
+  def beep: Int = nc.beep
+
+  def flash: Int = nc.flash
+
 }
