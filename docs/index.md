@@ -1,7 +1,7 @@
 ncurses
 =======
 
-*ncurses* provides Scala Native bindings for the [GNU Ncurses C library](https://invisible-island.net/ncurses/man/ncurses.3x.html).
+*ncurses* provides Scala Native bindings for the [GNU Ncurses C library](https://invisible-island.net/ncurses/announce.html).
 
 Overview
 --------
