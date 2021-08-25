@@ -1,7 +1,7 @@
 ncurses
 =======
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/edadma/ncurses?include_prereleases) ![GitHub](https://img.shields.io/github/license/edadma/ncurses)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/edadma/ncurses?include_prereleases) ![GitHub last commit](https://img.shields.io/github/last-commit/edadma/ncurses) ![GitHub](https://img.shields.io/github/license/edadma/ncurses)
 
 *ncurses* provides Scala Native bindings for the [GNU Ncurses C library](https://invisible-island.net/ncurses/man/ncurses.3x.html).
 
