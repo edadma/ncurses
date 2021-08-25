@@ -43,7 +43,18 @@ int ncurses_KEY_PPAGE() { return KEY_PPAGE; }
 int ncurses_KEY_NPAGE() { return KEY_NPAGE; }
 int ncurses_KEY_IC() { return KEY_IC; }
 int ncurses_KEY_STAB() { return KEY_STAB; }
-int ncurses_KEY_MOUSE() { return KEY_MOUSE; }
+int ncurses_KEY_F1() { return KEY_F(1); }
+int ncurses_KEY_F2() { return KEY_F(2); }
+int ncurses_KEY_F3() { return KEY_F(3); }
+int ncurses_KEY_F4() { return KEY_F(4); }
+int ncurses_KEY_F5() { return KEY_F(5); }
+int ncurses_KEY_F6() { return KEY_F(6); }
+int ncurses_KEY_F7() { return KEY_F(7); }
+int ncurses_KEY_F8() { return KEY_F(8); }
+int ncurses_KEY_F9() { return KEY_F(9); }
+int ncurses_KEY_F10() { return KEY_F(10); }
+int ncurses_KEY_F11() { return KEY_F(11); }
+int ncurses_KEY_F12() { return KEY_F(12); }
 
 int ncurses_OK() { return OK; }
 int ncurses_ERR() { return ERR; }

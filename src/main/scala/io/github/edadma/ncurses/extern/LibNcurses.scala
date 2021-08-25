@@ -130,6 +130,30 @@ object LibNcurses {
   def KEY_STAB: CInt = extern
   @name("ncurses_KEY_MOUSE")
   def KEY_MOUSE: CInt = extern
+  @name("ncurses_KEY_F1")
+  def KEY_F1: CInt = extern
+  @name("ncurses_KEY_F2")
+  def KEY_F2: CInt = extern
+  @name("ncurses_KEY_F3")
+  def KEY_F3: CInt = extern
+  @name("ncurses_KEY_F4")
+  def KEY_F4: CInt = extern
+  @name("ncurses_KEY_F5")
+  def KEY_F5: CInt = extern
+  @name("ncurses_KEY_F6")
+  def KEY_F6: CInt = extern
+  @name("ncurses_KEY_F7")
+  def KEY_F7: CInt = extern
+  @name("ncurses_KEY_F8")
+  def KEY_F8: CInt = extern
+  @name("ncurses_KEY_F9")
+  def KEY_F9: CInt = extern
+  @name("ncurses_KEY_F10")
+  def KEY_F10: CInt = extern
+  @name("ncurses_KEY_F11")
+  def KEY_F11: CInt = extern
+  @name("ncurses_KEY_F12")
+  def KEY_F12: CInt = extern
   @name("ncurses_clrtoeol")
   def clrtoeol: CInt = extern
   @name("ncurses_clrtobot")
