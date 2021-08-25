@@ -2,6 +2,8 @@ name := "ncurses"
 
 version := "0.2.1"
 
+description := "Scala Native bindings for the GNU Ncurses C library"
+
 scalaVersion := "2.13.6"
 
 enablePlugins(ScalaNativePlugin)
@@ -37,6 +39,17 @@ licenses := Seq("ISC" -> url("https://opensource.org/licenses/ISC"))
 
 homepage := Some(url("https://github.com/edadma/" + name.value))
 
+publishTo := sonatypePublishToBundle.value
+//  {
+//  val nexus = "https://s01.oss.sonatype.org/"
+//  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
+//  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+//}
+
+sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
+
+sonatypeCredentialHost := "s01.oss.sonatype.org"
+
 publishMavenStyle := true
 
 Test / publishArtifact := false
@@ -53,7 +66,7 @@ pomExtra :=
     <developers>
       <developer>
         <id>edadma</id>
-        <name>Edward A. Maxedon, Sr.</name>
+        <name>Edward A Maxedon, Sr</name>
         <url>https://github.com/edadma</url>
       </developer>
     </developers>
