@@ -22,10 +22,12 @@ sudo apt install libncurses-dev
 Include the following in your `build.sbt`:
 
 ```scala
+resolvers += Resolver.githubPackages("edadma")
+
 libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.1"
 ```
 
-Use the following `import`:
+Use the following `import` in your code:
 
 ```scala
 import io.github.edadma.ncurses.facade._
