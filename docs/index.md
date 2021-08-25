@@ -35,7 +35,7 @@ Include the following in your `build.sbt`:
 libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.1"
 ```
 
-Use the following `import`:
+Use the following `import` in your code:
 
 ```scala
 import io.github.edadma.ncurses.facade._
