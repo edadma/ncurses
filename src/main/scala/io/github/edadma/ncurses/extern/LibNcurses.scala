@@ -83,8 +83,8 @@ object LibNcurses {
   def werase(win: WINDOW): CInt                                                      = extern
   def beep: CInt                                                                     = extern
   def flash: CInt                                                                    = extern
-  def whline(win: WINDOW, y: CInt, x: CInt, ch: chtype, n: CInt): CInt               = extern
-  def wvline(win: WINDOW, y: CInt, x: CInt, ch: chtype, n: CInt): CInt               = extern
+  def whline(win: WINDOW, ch: chtype, n: CInt): CInt                                 = extern
+  def wvline(win: WINDOW, ch: chtype, n: CInt): CInt                                 = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -314,6 +314,10 @@ object LibNcurses {
   def mvhline(y: CInt, x: CInt, ch: chtype, n: CInt): CInt = extern
   @name("ncurses_mvvline")
   def mvvline(y: CInt, x: CInt, ch: chtype, n: CInt): CInt = extern
+  @name("ncurses_mvwhline")
+  def mvwhline(win: WINDOW, y: CInt, x: CInt, ch: chtype, n: CInt): CInt = extern
+  @name("ncurses_mvwvline")
+  def mvwvline(win: WINDOW, y: CInt, x: CInt, ch: chtype, n: CInt): CInt = extern
   @name("ncurses_ALL_MOUSE_EVENTS")
   def ALL_MOUSE_EVENTS: mmask_t = extern
   @name("ncurses_BUTTON1_RELEASED")

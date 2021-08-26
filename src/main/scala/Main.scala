@@ -1,11 +1,11 @@
-//import io.github.edadma.ncurses.facade._
-//
-//object Main extends App {
-//  initscr
-//  stdscr.mvaddch(1, 1, 'a')
-//  getch
-//  endwin
-//}
+import io.github.edadma.ncurses.facade._
+
+object Main extends App {
+  initscr
+  stdscr.mvaddch(1, 1, 'a')
+  getch
+  endwin
+}
 
 //ex 1
 //import io.github.edadma.ncurses.facade._

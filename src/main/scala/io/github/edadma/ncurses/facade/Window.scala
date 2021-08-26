@@ -123,8 +123,12 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
 
   def scroll: Int = nc.scroll(win)
 
-  def hline(y: Int, x: Int, ch: Int, n: Int): Int = nc.whline(win, y, x, ch.toUInt, n)
+  def hline(ch: Int, n: Int): Int = nc.whline(win, ch.toUInt, n)
 
-  def vline(y: Int, x: Int, ch: Int, n: Int): Int = nc.wvline(win, y, x, ch.toUInt, n)
+  def vline(ch: Int, n: Int): Int = nc.wvline(win, ch.toUInt, n)
+
+  def mvhline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvwhline(win, y, x, ch.toUInt, n)
+
+  def mvvline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvwvline(win, y, x, ch.toUInt, n)
 
 }
