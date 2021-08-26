@@ -80,6 +80,11 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
     (nc.wgetnstr(win, buf, n), fromCString(buf))
   }
 
+  def getstr(y: Int, x: Int, n: Int): (Int, String) = {
+    move(y, x)
+    getstr(n)
+  }
+
   def getmaxyx: (Int, Int) = {
     val y = stackalloc[CInt]
     val x = stackalloc[CInt]
@@ -135,5 +140,7 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
   def vline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvwvline(win, y, x, ch.toUInt, n)
 
   def wenclose(y: Int, x: Int): Boolean = nc.wenclose(win, y, x)
+
+  def mvwin(y: Int, x: Int): Int = nc.mvwin(win, y, x)
 
 }

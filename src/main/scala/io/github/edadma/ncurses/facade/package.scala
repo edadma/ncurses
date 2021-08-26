@@ -197,6 +197,11 @@ package object facade {
 
   def getstr(n: Int): (Int, String) = stdscr.getstr(n)
 
+  def getstr(y: Int, x: Int, n: Int): (Int, String) = {
+    move(y, x)
+    getstr(n)
+  }
+
   def chgat(n: Int, attr: Int, pair: Short): Int = nc.chgat(n, attr.toUInt, pair, null)
 
   def chgat(y: Int, x: Int, n: Int, attr: Int, pair: Short): Int = nc.mvchgat(y, x, n, attr.toUInt, pair, null)
