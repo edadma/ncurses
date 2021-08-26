@@ -143,9 +143,11 @@ package object facade {
 
   def addstr(s: String): Int = Zone(implicit z => nc.addstr(toCString(s)))
 
+  def addstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvaddstr(y, x, toCString(str)))
+
   def addnstr(str: String, n: Int): Int = Zone(implicit z => nc.addnstr(toCString(str), n))
 
-  def mvaddnstr(y: Int, x: Int, str: String, n: Int): Int = Zone(implicit z => nc.mvaddnstr(y, x, toCString(str), n))
+  def addnstr(y: Int, x: Int, str: String, n: Int): Int = Zone(implicit z => nc.mvaddnstr(y, x, toCString(str), n))
 
   def addch(ch: Int): Int = nc.addch(ch.toUInt)
 
@@ -161,11 +163,9 @@ package object facade {
 
   def scrl(n: Int): Int = nc.scrl(n)
 
-  def mvaddstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvaddstr(y, x, toCString(str)))
-
   def printw(fmt: String, args: Any*): Int = stdscr.printw(fmt, args: _*)
 
-  def mvprintw(y: Int, x: Int, fmt: String, args: Any*): Int = {
+  def printw(y: Int, x: Int, fmt: String, args: Any*): Int = {
     move(y, x)
     printw(fmt, args: _*)
   }
@@ -199,11 +199,11 @@ package object facade {
 
   def chgat(n: Int, attr: Int, pair: Short): Int = nc.chgat(n, attr.toUInt, pair, null)
 
-  def mvchgat(y: Int, x: Int, n: Int, attr: Int, pair: Short): Int = nc.mvchgat(y, x, n, attr.toUInt, pair, null)
+  def chgat(y: Int, x: Int, n: Int, attr: Int, pair: Short): Int = nc.mvchgat(y, x, n, attr.toUInt, pair, null)
 
-  def mvhline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvhline(y, x, ch.toUInt, n)
+  def hline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvhline(y, x, ch.toUInt, n)
 
-  def mvvline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvvline(y, x, ch.toUInt, n)
+  def vline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvvline(y, x, ch.toUInt, n)
 
   def mousemask(newmask: Int): (Int, Int) = {
     val oldmask = stackalloc[CUnsignedInt]

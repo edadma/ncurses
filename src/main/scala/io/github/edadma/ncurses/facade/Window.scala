@@ -12,7 +12,7 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
 
   def move(y: Int, x: Int): Int = nc.wmove(win, y, x)
 
-  def mvprintw(y: Int, x: Int, fmt: String, args: Any*): Int = {
+  def printw(y: Int, x: Int, fmt: String, args: Any*): Int = {
     move(y, x)
     printw(fmt, args: _*)
   }
@@ -25,14 +25,14 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
 
   def addnstr(str: String, n: Int): Int = Zone(implicit z => nc.waddnstr(win, toCString(str), n))
 
-  def mvaddstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvwaddstr(win, y, x, toCString(str)))
+  def addstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvwaddstr(win, y, x, toCString(str)))
 
-  def mvaddnstr(y: Int, x: Int, str: String, n: Int): Int =
+  def addnstr(y: Int, x: Int, str: String, n: Int): Int =
     Zone(implicit z => nc.mvwaddnstr(win, y, x, toCString(str), n))
 
   def addch(ch: Int): Int = nc.waddch(win, ch.toUInt)
 
-  def mvaddch(y: Int, x: Int, ch: Int): Int = nc.mvwaddch(win, y, x, ch.toUInt)
+  def addch(y: Int, x: Int, ch: Int): Int = nc.mvwaddch(win, y, x, ch.toUInt)
 
   def echochar(ch: Int): Int = nc.wechochar(win, ch.toUInt)
 
@@ -102,7 +102,7 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
 
   def chgat(n: Int, attr: Int, pair: Short): Int = nc.wchgat(win, n, attr.toUInt, pair, null)
 
-  def mvchgat(y: Int, x: Int, n: Int, attr: Int, pair: Short): Int = nc.mvwchgat(win, y, x, n, attr.toUInt, pair, null)
+  def chgat(y: Int, x: Int, n: Int, attr: Int, pair: Short): Int = nc.mvwchgat(win, y, x, n, attr.toUInt, pair, null)
 
   def refresh: Int = nc.wrefresh(win)
 
@@ -130,8 +130,8 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
 
   def vline(ch: Int, n: Int): Int = nc.wvline(win, ch.toUInt, n)
 
-  def mvhline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvwhline(win, y, x, ch.toUInt, n)
+  def hline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvwhline(win, y, x, ch.toUInt, n)
 
-  def mvvline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvwvline(win, y, x, ch.toUInt, n)
+  def vline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvwvline(win, y, x, ch.toUInt, n)
 
 }

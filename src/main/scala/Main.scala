@@ -2,8 +2,8 @@ import io.github.edadma.ncurses.facade._
 
 object Main extends App {
   initscr
-  addch(1, 1, 'a')
-  addch('b')
+  printw(2, 1, "asdf %d ", 123)
+  printw("zxcv %d", 123)
   getch
   endwin
 }
@@ -30,13 +30,13 @@ object Main extends App {
 //    val mesg         = "Enter a string: "
 //    val (rows, cols) = stdscr.getmaxyx
 //
-//    mvprintw(rows / 2, (cols - mesg.length) / 2, "%s", mesg)
+//    printw(rows / 2, (cols - mesg.length) / 2, "%s", mesg)
 //
 //    val (_, str) = getnstr(20)
 //
 //    noecho
 //    curs_set(0)
-//    mvaddstr(LINES - 1, 0, s"You entered: $str")
+//    addstr(LINES - 1, 0, s"You entered: $str")
 //    getch
 //  } catch {
 //    case e: Exception =>
@@ -72,7 +72,7 @@ object Main extends App {
 //  val starty = (LINES - HEIGHT) / 2
 //
 //  attron(A_REVERSE)
-//  mvprintw(LINES - 1, 1, "Click on Exit to quit (Works best in a virtual console)")
+//  printw(LINES - 1, 1, "Click on Exit to quit (Works best in a virtual console)")
 //  refresh
 //  attroff(A_REVERSE)
 //
@@ -101,7 +101,7 @@ object Main extends App {
 //              sys.exit()
 //            }
 //
-//            mvprintw(LINES - 2, 1, "Choice made is : %d String Chosen is \"%10s\"", choice, choices(choice - 1))
+//            printw(LINES - 2, 1, "Choice made is : %d String Chosen is \"%10s\"", choice, choices(choice - 1))
 //            refresh
 //          }
 //
@@ -119,10 +119,10 @@ object Main extends App {
 //    for (i <- 0 until n_choices) {
 //      if (highlight == i + 1) {
 //        menu_win.attron(A_REVERSE);
-//        menu_win.mvprintw(y, x, "%s", choices(i));
+//        menu_win.printw(y, x, "%s", choices(i));
 //        menu_win.attroff(A_REVERSE);
 //      } else
-//        menu_win.mvprintw(y, x, "%s", choices(i));
+//        menu_win.printw(y, x, "%s", choices(i));
 //      y += 1
 //    }
 //
