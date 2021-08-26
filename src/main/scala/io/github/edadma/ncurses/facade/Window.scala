@@ -47,6 +47,8 @@ class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal
 
   def bkgdset(ch: Int): Unit = nc.wbkgdset(win, ch.toUInt)
 
+  def bkgd(ch: Int): Unit = nc.wbkgd(win, ch.toUInt)
+
   def scrollok(bf: Boolean): Unit = nc.scrollok(win, bf)
 
   def scrl(n: Int): Int = nc.wscrl(win, n)

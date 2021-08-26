@@ -39,6 +39,7 @@ object LibNcurses {
   def delwin(win: WINDOW): CInt                                                       = extern
   def wclear(win: WINDOW): CInt                                                       = extern
   def wbkgdset(win: WINDOW, ch: chtype): Unit                                         = extern
+  def wbkgd(win: WINDOW, ch: chtype): Unit                                            = extern
   def scrollok(win: WINDOW, bf: CBool): CInt                                          = extern
   def wscrl(win: WINDOW, n: CInt): CInt                                               = extern
   def keyname(c: CInt): CString                                                       = extern
@@ -191,6 +192,8 @@ object LibNcurses {
   def attroff(attr: CInt): CInt = extern
   @name("ncurses_bkgdset")
   def bkgdset(ch: chtype): Unit = extern
+  @name("ncurses_bkgd")
+  def bkgd(ch: chtype): Unit = extern
   @name("ncurses_A_NORMAL")
   def A_NORMAL: CInt = extern
   @name("ncurses_A_STANDOUT")
@@ -378,6 +381,5 @@ object LibNcurses {
     extern
 
 }
-// todo: https://invisible-island.net/ncurses/man/curs_bkgd.3x.html
 // todo: https://invisible-island.net/ncurses/man/curs_inopts.3x.html
 // todo: https://invisible-island.net/ncurses/man/curs_addchstr.3x.html

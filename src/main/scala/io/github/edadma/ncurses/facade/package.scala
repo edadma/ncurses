@@ -139,6 +139,8 @@ package object facade {
 
   def bkgdset(ch: Int): Unit = nc.bkgdset(ch.toUInt)
 
+  def bkgd(ch: Int): Unit = nc.bkgd(ch.toUInt)
+
   def start_color: Int = nc.start_color
 
   def addstr(s: String): Int = Zone(implicit z => nc.addstr(toCString(s)))
