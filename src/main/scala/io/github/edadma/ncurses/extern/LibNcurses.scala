@@ -83,6 +83,8 @@ object LibNcurses {
   def werase(win: WINDOW): CInt                                                      = extern
   def beep: CInt                                                                     = extern
   def flash: CInt                                                                    = extern
+  def whline(win: WINDOW, y: CInt, x: CInt, ch: chtype, n: CInt): CInt               = extern
+  def wvline(win: WINDOW, y: CInt, x: CInt, ch: chtype, n: CInt): CInt               = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -298,6 +300,8 @@ object LibNcurses {
   def getcury(win: WINDOW): CInt = extern
   @name("ncurses_getcurx")
   def getcurx(win: WINDOW): CInt = extern
+  @name("ncurses_scroll")
+  def scroll(win: WINDOW): CInt = extern
   @name("ncurses_mvwchgat")
   def mvwchgat(win: WINDOW, y: CInt, x: CInt, n: CInt, attr: attr_t, pair: CShort, opts: Ptr[Byte]): CInt = extern
   @name("ncurses_chgat")
@@ -356,6 +360,10 @@ object LibNcurses {
   def COLOR_CYAN: CInt = extern
   @name("ncurses_COLOR_WHITE")
   def COLOR_WHITE: CInt = extern
+  @name("ncurses_border")
+  def border(ls: chtype, rs: chtype, ts: chtype, bs: chtype, tl: chtype, tr: chtype, bl: chtype, br: chtype): CInt =
+    extern
 
 }
-// todo: finish adding https://invisible-island.net/ncurses/man/curs_border.3x.html, https://invisible-island.net/ncurses/man/curs_scroll.3x.html
+// todo: finish adding https://invisible-island.net/ncurses/man/curs_border.3x.html
+// todo: https://invisible-island.net/ncurses/man/curs_bkgd.3x.html

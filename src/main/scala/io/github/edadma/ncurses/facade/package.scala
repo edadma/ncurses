@@ -238,4 +238,7 @@ package object facade {
 
   def flash: Int = nc.flash
 
+  def border(ls: Int, rs: Int, ts: Int, bs: Int, tl: Int, tr: Int, bl: Int, br: Int): Int =
+    nc.border(ls.toUInt, rs.toUInt, ts.toUInt, bs.toUInt, tl.toUInt, tr.toUInt, bl.toUInt, br.toUInt)
+
 }

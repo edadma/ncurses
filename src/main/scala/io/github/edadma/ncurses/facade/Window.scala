@@ -121,4 +121,10 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
 
   def erase: Int = nc.werase(win)
 
+  def scroll: Int = nc.scroll(win)
+
+  def hline(y: Int, x: Int, ch: Int, n: Int): Int = nc.whline(win, y, x, ch.toUInt, n)
+
+  def vline(y: Int, x: Int, ch: Int, n: Int): Int = nc.wvline(win, y, x, ch.toUInt, n)
+
 }
