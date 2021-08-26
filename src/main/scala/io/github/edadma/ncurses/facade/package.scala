@@ -245,4 +245,6 @@ package object facade {
   def border(ls: Int, rs: Int, ts: Int, bs: Int, tl: Int, tr: Int, bl: Int, br: Int): Int =
     nc.border(ls.toUInt, rs.toUInt, ts.toUInt, bs.toUInt, tl.toUInt, tr.toUInt, bl.toUInt, br.toUInt)
 
+  def has_mouse: Boolean = nc.has_mouse
+
 }

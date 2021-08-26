@@ -85,6 +85,8 @@ object LibNcurses {
   def flash: CInt                                                                    = extern
   def whline(win: WINDOW, ch: chtype, n: CInt): CInt                                 = extern
   def wvline(win: WINDOW, ch: chtype, n: CInt): CInt                                 = extern
+  def wenclose(win: WINDOW, y: CInt, x: CInt): CBool                                 = extern
+  def has_mouse: CBool                                                               = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -374,4 +376,5 @@ object LibNcurses {
 
 }
 // todo: https://invisible-island.net/ncurses/man/curs_bkgd.3x.html
-// todo: https://invisible-island.net/ncurses/man/curs_addstr.3x.html
+// todo: https://invisible-island.net/ncurses/man/curs_getstr.3x.html
+// todo: https://invisible-island.net/ncurses/man/curs_inopts.3x.html

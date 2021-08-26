@@ -134,4 +134,6 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
 
   def vline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvwvline(win, y, x, ch.toUInt, n)
 
+  def wenclose(y: Int, x: Int): Boolean = nc.wenclose(win, y, x)
+
 }
