@@ -24,7 +24,7 @@ Include the following in your `build.sbt`:
 ```scala
 resolvers += Resolver.githubPackages("edadma")
 
-libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.1"
+libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.2"
 ```
 
 Use the following `import` in your code:
