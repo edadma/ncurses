@@ -1,12 +1,11 @@
 package io.github.edadma.ncurses.facade
 
-import io.github.edadma.ncurses.extern.LibNcurses
 import io.github.edadma.ncurses.extern.{LibNcurses => nc}
 
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
 
-class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extends AnyVal {
+class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal {
 
   def printw(fmt: String, args: Any*): Int = Zone(implicit z => nc.vw_printw(win, toCString(fmt), varargs(args)))
 

@@ -252,4 +252,8 @@ package object facade {
 
   def has_mouse: Boolean = nc.has_mouse
 
+  def use_default_colors: Int = nc.use_default_colors
+
+  def assume_default_colors(fg: Int, bg: Int): Int = nc.assume_default_colors(fg, bg)
+
 }

@@ -88,6 +88,8 @@ object LibNcurses {
   def wenclose(win: WINDOW, y: CInt, x: CInt): CBool                                 = extern
   def has_mouse: CBool                                                               = extern
   def mvwin(win: WINDOW, y: CInt, x: CInt): CInt                                     = extern
+  def use_default_colors: CInt                                                       = extern
+  def assume_default_colors(fg: CInt, bg: CInt): CInt                                = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
