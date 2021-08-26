@@ -34,7 +34,7 @@
 //
 //    printw(rows / 2, (cols - mesg.length) / 2, "%s", mesg)
 //
-//    val (_, str) = getnstr(20)
+//    val (_, str) = getstr(20)
 //
 //    noecho
 //    curs_set(0)

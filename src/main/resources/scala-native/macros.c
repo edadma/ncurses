@@ -61,6 +61,7 @@ int ncurses_KEY_F9() { return KEY_F(9); }
 int ncurses_KEY_F10() { return KEY_F(10); }
 int ncurses_KEY_F11() { return KEY_F(11); }
 int ncurses_KEY_F12() { return KEY_F(12); }
+int ncurses_KEY_MOUSE() { return KEY_MOUSE; }
 
 int ncurses_OK() { return OK; }
 int ncurses_ERR() { return ERR; }

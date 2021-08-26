@@ -83,7 +83,7 @@ object Main extends App {
 
     mvprintw(rows / 2, (cols - mesg.length) / 2, "%s", mesg)
 
-    val (_, str) = getnstr(20)
+    val (_, str) = getstr(20)
 
     noecho
     curs_set(0)
@@ -128,7 +128,7 @@ object Main extends App {
   val starty = (LINES - HEIGHT) / 2
 
   attron(A_REVERSE)
-  mvprintw(LINES - 1, 1, "Click on Exit to quit (Works best in a virtual console)")
+  printw(LINES - 1, 1, "Click on Exit to quit (Works best in a virtual console)")
   refresh
   attroff(A_REVERSE)
 
@@ -157,7 +157,7 @@ object Main extends App {
               sys.exit()
             }
 
-            mvprintw(LINES - 2, 1, "Choice made is : %d String Chosen is \"%10s\"", choice, choices(choice - 1))
+            printw(LINES - 2, 1, "Choice made is : %d String Chosen is \"%10s\"", choice, choices(choice - 1))
             refresh
           }
 
@@ -175,10 +175,10 @@ object Main extends App {
     for (i <- 0 until n_choices) {
       if (highlight == i + 1) {
         menu_win.attron(A_REVERSE);
-        menu_win.mvprintw(y, x, "%s", choices(i));
+        menu_win.printw(y, x, "%s", choices(i));
         menu_win.attroff(A_REVERSE);
       } else
-        menu_win.mvprintw(y, x, "%s", choices(i));
+        menu_win.printw(y, x, "%s", choices(i));
       y += 1
     }
 
