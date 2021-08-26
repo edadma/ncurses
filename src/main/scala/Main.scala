@@ -2,7 +2,8 @@ import io.github.edadma.ncurses.facade._
 
 object Main extends App {
   initscr
-  stdscr.mvaddch(1, 1, 'a')
+  addch(1, 1, 'a')
+  addch('b')
   getch
   endwin
 }

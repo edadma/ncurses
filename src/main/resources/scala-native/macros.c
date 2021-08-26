@@ -9,6 +9,8 @@ int ncurses_addnstr(char* str, int n) { return addnstr(str, n); }
 int ncurses_mvaddstr(int y, int x, char* str) { return mvaddstr(y, x, str); }
 int ncurses_waddstr(WINDOW* win, char* str) { return waddstr(win, str); }
 int ncurses_mvwaddstr(WINDOW* win, int y, int x, char* str) { return mvwaddstr(win, y, x, str); }
+int ncurses_mvaddnstr(int y, int x, char* str, int n) { return mvaddnstr(y, x, str, n); }
+int ncurses_mvwaddnstr(WINDOW* win, int y, int x, char* str, int n) { return mvwaddnstr(win, y, x, str, n); }
 int ncurses_addch(chtype ch) { return addch(ch); }
 int ncurses_clrtoeol() { return clrtoeol(); }
 int ncurses_clrtobot() { return clrtobot(); }

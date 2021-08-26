@@ -106,6 +106,10 @@ object LibNcurses {
   def waddstr(win: WINDOW, str: CString): CInt = extern
   @name("ncurses_mvwaddstr")
   def mvwaddstr(win: WINDOW, y: CInt, x: CInt, str: CString): CInt = extern
+  @name("ncurses_mvaddnstr")
+  def mvaddnstr(y: CInt, x: CInt, str: CString, n: CInt): CInt = extern
+  @name("ncurses_mvwaddnstr")
+  def mvwaddnstr(win: WINDOW, y: CInt, x: CInt, str: CString, n: CInt): CInt = extern
   @name("ncurses_addch")
   def addch(ch: chtype): CInt = extern
   @name("ncurses_KEY_DOWN")
@@ -369,5 +373,5 @@ object LibNcurses {
     extern
 
 }
-// todo: finish adding https://invisible-island.net/ncurses/man/curs_border.3x.html
 // todo: https://invisible-island.net/ncurses/man/curs_bkgd.3x.html
+// todo: https://invisible-island.net/ncurses/man/curs_addstr.3x.html

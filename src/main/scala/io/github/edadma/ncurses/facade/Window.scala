@@ -23,9 +23,12 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
     nc.waddstr(win, toCString(str))
   }
 
-  def addnstr(str: String, n: Int): Int = Zone(implicit z => nc.addnstr(toCString(str), n))
+  def addnstr(str: String, n: Int): Int = Zone(implicit z => nc.waddnstr(win, toCString(str), n))
 
   def mvaddstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvwaddstr(win, y, x, toCString(str)))
+
+  def mvaddnstr(y: Int, x: Int, str: String, n: Int): Int =
+    Zone(implicit z => nc.mvwaddnstr(win, y, x, toCString(str), n))
 
   def addch(ch: Int): Int = nc.waddch(win, ch.toUInt)
 

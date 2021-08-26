@@ -143,7 +143,13 @@ package object facade {
 
   def addstr(s: String): Int = Zone(implicit z => nc.addstr(toCString(s)))
 
+  def addnstr(str: String, n: Int): Int = Zone(implicit z => nc.addnstr(toCString(str), n))
+
+  def mvaddnstr(y: Int, x: Int, str: String, n: Int): Int = Zone(implicit z => nc.mvaddnstr(y, x, toCString(str), n))
+
   def addch(ch: Int): Int = nc.addch(ch.toUInt)
+
+  def addch(x: Int, n: Int, ch: Int): Int = nc.mvaddch(x, n, ch.toUInt)
 
   def echochar(ch: Int): CInt = nc.echochar(ch.toUInt)
 
@@ -194,8 +200,6 @@ package object facade {
   def chgat(n: Int, attr: Int, pair: Short): Int = nc.chgat(n, attr.toUInt, pair, null)
 
   def mvchgat(y: Int, x: Int, n: Int, attr: Int, pair: Short): Int = nc.mvchgat(y, x, n, attr.toUInt, pair, null)
-
-  def mvaddch(x: Int, n: Int, ch: Int): Int = nc.mvaddch(x, n, ch.toUInt)
 
   def mvhline(y: Int, x: Int, ch: Int, n: Int): Int = nc.mvhline(y, x, ch.toUInt, n)
 
