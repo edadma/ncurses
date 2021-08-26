@@ -81,13 +81,13 @@ object Main extends App {
     val mesg         = "Enter a string: "
     val (rows, cols) = stdscr.getmaxyx
 
-    mvprintw(rows / 2, (cols - mesg.length) / 2, "%s", mesg)
+    printw(rows / 2, (cols - mesg.length) / 2, "%s", mesg)
 
     val (_, str) = getstr(20)
 
     noecho
     curs_set(0)
-    mvaddstr(LINES - 1, 0, s"You entered: $str")
+    addstr(LINES - 1, 0, s"You entered: $str")
     getch
   } catch {
     case e: Exception =>
