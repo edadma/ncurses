@@ -210,15 +210,15 @@ The official documentation for the Ncurses library can be found at [ncurses](htt
 Guidelines
 ----------
 
-In these guidelines, the phrase *library function* refers to the GNU Ncurses C library function that has a corresponding method in this library.  Likewise, the phrase *facade method* refers to a method in this library that has a corresponding function in the GNU Ncurses library.
+In these guidelines, the phrase *library function/variable* refers to the GNU Ncurses C library function/variable that has a counterpart in this library.  Likewise, the phrase *facade method/variable/constant/declaration* refers to a method/variable/constant in this library that has a counterpart in the GNU Ncurses library.
 
-There are hundreds of functions in the GNU Ncurses C library.  Therefore, in order to be able to find library documentation corresponding to a given facade method or, vice versa, in order to know which facade method corresponds to a given library function, there needs to be clear method naming guidelines.  Also, in the case where facade methods have a different number of parameters or return values (in the cases where facade methods return a tuple) from their library function counterparts, there needs to be clear method parameter and return type guidelines.
+There are hundreds of functions in the GNU Ncurses C library.  Therefore, in order to be able to find library documentation corresponding to a given facade declaration or, vice versa, in order to know which facade declaration corresponds to a given library function or variable, there needs to be clear method naming guidelines.  Also, in the case where facade methods have a different number of parameters or return values (in the cases where facade methods return a tuple) from their library function counterparts, there needs to be clear method parameter and return type guidelines.
 
 The following are the guidelines being adhered to.
 
 ### Naming
 
-In general, the names of almost all facade methods, variables and constants shall be exactly the same as their library counterparts.  This guideline will make it easier to lookup documentation for a given library function or variable.  And, vice versa, this will make it easy to know the name for a facade counterpart to a given library function or variable.  There are a number of exceptions to this guideline arising from the "Value class method names" guideline, however because of how the GNU Ncurses library documentation is organized, those exceptions won't cause a problem in finding relevant documentation.
+In general, the names of nearly all facade declarations shall be exactly the same as their library counterparts.  This guideline will make it easier to lookup documentation for a given library function or variable.  And, vice versa, this will make it easy to know the name for a facade counterpart to a given library function or variable.  There are a number of exceptions to this guideline arising from the "Value class method names" and "Overloaded method variants" guidelines, however because of how the GNU Ncurses library documentation is organized, those exceptions won't cause a problem in finding relevant documentation.
 
 ### Methods that return a tuple
 
@@ -233,6 +233,12 @@ The Ncurses library already follows a certain naming convention fairly consisten
 - in many, but not all cases function names prefixed with "w" and "mvw" have corresponding `stdscr` functions without the "w" in the name prefix.
 
 The guideline being followed here is that window operation functions with a "w" in their prefix that have a corresponding `stdscr` version of the function (without the "w"), shall have a corresponding `Window` facade method that drops the "w" in the name prefix. However, window operation functions with a "w" in their prefix that do not have a corresponding `stdscr` version of the function at all shall keep the "w" in the name prefix.  This rule makes it easier to look up documentation for corresponding library functions.
+
+### Overloaded method variants
+
+As mentioned above, the Ncurses library tends to follow a function naming convention for variants of the same operation. In cases where these variants can be overloaded in Scala, the base name (i.e. without the extra prefix or infix letters) shall be used throughout. An example of this is the large number of functions such as `addstr`/`mvaddstr` that have variants with and without the 'mv' prefix.  There are also pairs of functions with infix naming variants such as `addstr`/`addnstr` that can be overloaded.
+
+This guideline shall not apply in cases where the resulting name doesn't appear in the official Ncurses C library documentation.  
 
 ### Value class method parameters
 

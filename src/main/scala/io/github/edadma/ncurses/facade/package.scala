@@ -145,9 +145,9 @@ package object facade {
 
   def addstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvaddstr(y, x, toCString(str)))
 
-  def addnstr(str: String, n: Int): Int = Zone(implicit z => nc.addnstr(toCString(str), n))
+  def addstr(str: String, n: Int): Int = Zone(implicit z => nc.addnstr(toCString(str), n))
 
-  def addnstr(y: Int, x: Int, str: String, n: Int): Int = Zone(implicit z => nc.mvaddnstr(y, x, toCString(str), n))
+  def addstr(y: Int, x: Int, str: String, n: Int): Int = Zone(implicit z => nc.mvaddnstr(y, x, toCString(str), n))
 
   def addch(ch: Int): Int = nc.addch(ch.toUInt)
 
@@ -195,7 +195,7 @@ package object facade {
 
   def curs_set(visibility: Int): Int = nc.curs_set(visibility)
 
-  def getnstr(n: Int): (Int, String) = stdscr.getnstr(n)
+  def getstr(n: Int): (Int, String) = stdscr.getstr(n)
 
   def chgat(n: Int, attr: Int, pair: Short): Int = nc.chgat(n, attr.toUInt, pair, null)
 

@@ -23,11 +23,11 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
     nc.waddstr(win, toCString(str))
   }
 
-  def addnstr(str: String, n: Int): Int = Zone(implicit z => nc.waddnstr(win, toCString(str), n))
+  def addstr(str: String, n: Int): Int = Zone(implicit z => nc.waddnstr(win, toCString(str), n))
 
   def addstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvwaddstr(win, y, x, toCString(str)))
 
-  def addnstr(y: Int, x: Int, str: String, n: Int): Int =
+  def addstr(y: Int, x: Int, str: String, n: Int): Int =
     Zone(implicit z => nc.mvwaddnstr(win, y, x, toCString(str), n))
 
   def addch(ch: Int): Int = nc.waddch(win, ch.toUInt)
@@ -72,7 +72,7 @@ class Window private[facade] (private[facade] val win: LibNcurses.WINDOW) extend
 
   def init_color(color: Short, r: Short, g: Short, b: Short): Int = nc.init_color(color, r, g, b)
 
-  def getnstr(n: Int): (Int, String) = {
+  def getstr(n: Int): (Int, String) = {
     require(n > 0, s"getnstr: n should be positive: n = $n")
 
     val buf = stackalloc[CChar]((n + 1).toUInt)

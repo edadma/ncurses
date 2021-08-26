@@ -1,12 +1,14 @@
-import io.github.edadma.ncurses.facade._
-
-object Main extends App {
-  initscr
-  printw(2, 1, "asdf %d ", 123)
-  printw("zxcv %d", 123)
-  getch
-  endwin
-}
+//import io.github.edadma.ncurses.facade._
+//
+//object Main extends App {
+//  initscr
+//  addstr("asdf ")
+//  addstr("zxcv ", 2)
+//  addstr(2, 1, "qwer")
+//  addstr(3, 1, "iouy", 2)
+//  getch
+//  endwin
+//}
 
 //ex 1
 //import io.github.edadma.ncurses.facade._
