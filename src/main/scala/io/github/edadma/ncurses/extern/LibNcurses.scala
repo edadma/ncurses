@@ -19,7 +19,10 @@ object LibNcurses {
 
   def initscr: WINDOW                                                                 = extern
   def cbreak: CInt                                                                    = extern
+  def nocbreak: CInt                                                                  = extern
   def raw: CInt                                                                       = extern
+  def noraw: CInt                                                                     = extern
+  def echo: CInt                                                                      = extern
   def noecho: CInt                                                                    = extern
   def endwin: CInt                                                                    = extern
   def start_color: CInt                                                               = extern

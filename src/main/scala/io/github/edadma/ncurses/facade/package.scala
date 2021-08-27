@@ -129,9 +129,15 @@ package object facade {
 
   def initscr: Window = new Window(nc.initscr)
 
+  def nocbreak: Int = nc.nocbreak
+
   def cbreak: Int = nc.cbreak
 
   def raw: Int = nc.raw
+
+  def noraw: Int = nc.noraw
+
+  def echo: Int = nc.echo
 
   def noecho: Int = nc.noecho
 
