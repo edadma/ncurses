@@ -384,5 +384,4 @@ object LibNcurses {
     extern
 
 }
-// todo: https://invisible-island.net/ncurses/man/curs_inopts.3x.html
 // todo: https://invisible-island.net/ncurses/man/curs_addchstr.3x.html
