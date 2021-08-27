@@ -2,20 +2,32 @@ package io.github.edadma.ncurses.facade
 
 import io.github.edadma.ncurses.extern.{LibNcurses => nc}
 
-class Panel private[facade] (private[facade] val panel: nc.PANEL) extends AnyVal {
+class Panel private[facade] (private[facade] val pan: nc.PANEL) extends AnyVal {
 
-  def panel_above: Panel = new Panel(nc.panel_above(panel))
+  def panel_above: Panel = new Panel(nc.panel_above(pan))
 
-  def panel_below: Panel = new Panel(nc.panel_below(panel))
+  def panel_below: Panel = new Panel(nc.panel_below(pan))
 
-  def show_panel: Int = nc.show_panel(panel)
+  def show_panel: Int = nc.show_panel(pan)
 
-  def hide_panel: Int = nc.hide_panel(panel)
+  def hide_panel: Int = nc.hide_panel(pan)
 
-  def top_panel: Int = nc.top_panel(panel)
+  def top_panel: Int = nc.top_panel(pan)
 
-  def bottom_panel: Int = nc.bottom_panel(panel)
+  def bottom_panel: Int = nc.bottom_panel(pan)
 
-  def del_panel: Int = nc.del_panel(panel)
+  def del_panel: Int = nc.del_panel(pan)
+
+  def panel_window: Window = new Window(nc.panel_window(pan))
+
+  def replace_panel(win: Window): Int = nc.replace_panel(pan, win.win)
+
+  def move_panel(starty: Int, startx: Int): Int = nc.move_panel(pan, starty, startx)
+
+  def panel_hidden: Boolean = nc.panel_hidden(pan)
+
+  def set_panel_userptr(ptr: Panel): Int = nc.set_panel_userptr(pan, ptr.pan)
+
+  def panel_userptr: Panel = new Panel(nc.panel_userptr(pan))
 
 }

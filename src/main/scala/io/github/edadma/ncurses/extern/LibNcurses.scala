@@ -94,6 +94,12 @@ object LibNcurses {
   def mvwin(win: WINDOW, y: CInt, x: CInt): CInt                                     = extern
   def use_default_colors: CInt                                                       = extern
   def assume_default_colors(fg: CInt, bg: CInt): CInt                                = extern
+  def panel_window(pan: PANEL): WINDOW                                               = extern
+  def replace_panel(pan: PANEL, win: WINDOW): CInt                                   = extern
+  def move_panel(pan: PANEL, starty: CInt, startx: CInt): CInt                       = extern
+  def panel_hidden(pan: PANEL): CBool                                                = extern
+  def set_panel_userptr(pan: PANEL, ptr: Ptr[Byte]): CInt                            = extern
+  def panel_userptr(pan: PANEL): Ptr[Byte]                                           = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -385,3 +391,4 @@ object LibNcurses {
 
 }
 // todo: https://invisible-island.net/ncurses/man/curs_addchstr.3x.html
+// todo: https://invisible-island.net/ncurses/man/panel.3x.html
