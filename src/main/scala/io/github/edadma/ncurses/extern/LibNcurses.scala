@@ -391,4 +391,4 @@ object LibNcurses {
 
 }
 // todo: https://invisible-island.net/ncurses/man/curs_addchstr.3x.html
-// todo: https://invisible-island.net/ncurses/man/panel.3x.html
+// todo: wide characters: ncursesw project
