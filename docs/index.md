@@ -48,7 +48,7 @@ import io.github.edadma.ncurses.facade._
 Examples
 --------
 
-The following examples are taken from the well-known [NCURSES Programming HOWTO](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/) with only slight changes where needed.
+The following examples are taken from the well-known [NCURSES Programming HOWTO](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/), with only slight changes where needed.
 
 ### [Example 1](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/helloworld.html)
 
