@@ -314,6 +314,8 @@ object LibNcurses {
   def ACS_SSSS: CInt = extern
   @name("ncurses_COLOR_PAIR")
   def COLOR_PAIR(c: CInt): CInt = extern
+  @name("ncurses_getbegyx")
+  def getbegyx(win: WINDOW, y: Ptr[CInt], x: Ptr[CInt]): Unit = extern
   @name("ncurses_getmaxyx")
   def getmaxyx(win: WINDOW, y: Ptr[CInt], x: Ptr[CInt]): Unit = extern
   @name("ncurses_getyx")

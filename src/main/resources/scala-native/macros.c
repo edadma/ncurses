@@ -23,6 +23,7 @@ int ncurses_attron(int attr) { return attron(attr); }
 int ncurses_attroff(int attr) { return attroff(attr); }
 void ncurses_bkgdset(chtype ch) { bkgdset(ch); }
 void ncurses_bkgd(chtype ch) { bkgd(ch); }
+void ncurses_getbegyx(WINDOW* win, int* y, int* x) { getbegyx(win, *y, *x); }
 void ncurses_getmaxyx(WINDOW* win, int* y, int* x) { getmaxyx(win, *y, *x); }
 void ncurses_getyx(WINDOW* win, int* y, int* x) { getyx(win, *y, *x); }
 int ncurses_getcury(WINDOW* win) { return getcury(win); }

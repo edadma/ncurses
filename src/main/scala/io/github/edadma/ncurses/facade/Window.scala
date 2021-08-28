@@ -80,6 +80,14 @@ class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal
     getstr(n)
   }
 
+  def getbegyx: (Int, Int) = {
+    val y = stackalloc[CInt]
+    val x = stackalloc[CInt]
+
+    nc.getbegyx(win, y, x)
+    (!y, !x)
+  }
+
   def getmaxyx: (Int, Int) = {
     val y = stackalloc[CInt]
     val x = stackalloc[CInt]
