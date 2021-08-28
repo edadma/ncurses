@@ -6,9 +6,9 @@ ncurses
 Overview
 --------
 
-The goal of this project is to provide an easy to use Scala Native facade for the entire Ncurses C library, including the [panel](https://invisible-island.net/ncurses/man/panel.3x.html), [menu](https://invisible-island.net/ncurses/man/menu.3x.html) and [form](https://invisible-island.net/ncurses/man/form.3x.html) extension libraries. This project is active and will be kept up-to-date with respect to Scala Native releases.
+The goal of this project is to provide an easy-to-use Scala Native facade for the entire Ncurses C library, including the [panel](https://invisible-island.net/ncurses/man/panel.3x.html), [menu](https://invisible-island.net/ncurses/man/menu.3x.html) and [form](https://invisible-island.net/ncurses/man/form.3x.html) extension libraries, which are bundled with the main *ncurses* library. This project is active and will be kept up-to-date with respect to new Scala Native releases.
 
-The more "programmer friendly" part of this library is found in the `io.github.edadma.ncurses.facade` package.  That's the only package you need to import from, as seen in the examples below.  The other package in the library is `io.github.edadma.ncurses.extern` which provides for interaction with the Ncurses C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `io.github.edadma.ncurses.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Specifically, you never have to worry about memory allocation or type conversions.
+The more "programmer friendly" part of this library is found in the `io.github.edadma.ncurses.facade` package.  That's the only package you need to import from, as seen in the examples below.  The other package in the library is `io.github.edadma.ncurses.extern` which provides for interaction with the Ncurses C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `io.github.edadma.ncurses.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Consequently, you never have to worry about memory allocation or type conversions.
 
 ### Efficient screen output
 
