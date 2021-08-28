@@ -239,9 +239,6 @@ package object facade {
 
   def init_pair(pair: Int, f: Int, b: Int): Int = nc.init_pair(pair.toShort, f.toShort, b.toShort)
 
-  def init_color(color: Int, r: Int, g: Int, b: Int): Int =
-    nc.init_color(color.toShort, r.toShort, g.toShort, b.toShort)
-
   def mouse_trafo(y: Int, x: Int, to_screen: Boolean): (Boolean, Int, Int) = {
     val py = stackalloc[CInt]
     val px = stackalloc[CInt]
