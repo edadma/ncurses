@@ -264,4 +264,48 @@ package object facade {
 
   def assume_default_colors(fg: Int, bg: Int): Int = nc.assume_default_colors(fg, bg)
 
+  def addchstr(chstr: Seq[Int]): Int = {
+    val len = chstr.length
+    val buf = stackalloc[nc.chtype](len.toUInt)
+
+    for (i <- 0 until len)
+      buf(i) = chstr(i).toUInt
+
+    nc.addchstr(buf)
+  }
+
+  def addchstr(chstr: Seq[Int], n: Int): Int = {
+    require(n >= 0, s"addchstr: n should be non-negative: n = $n")
+
+    val len = n min chstr.length
+    val buf = stackalloc[nc.chtype](len.toUInt)
+
+    for (i <- 0 until len)
+      buf(i) = chstr(i).toUInt
+
+    nc.addchnstr(buf, len)
+  }
+
+  def addchstr(y: Int, x: Int, chstr: Seq[Int]): Int = {
+    val len = chstr.length
+    val buf = stackalloc[nc.chtype](len.toUInt)
+
+    for (i <- 0 until len)
+      buf(i) = chstr(i).toUInt
+
+    nc.mvaddchstr(y, x, buf)
+  }
+
+  def addchstr(y: Int, x: Int, chstr: Seq[Int], n: Int): Int = {
+    require(n >= 0, s"addchstr: n should be non-negative: n = $n")
+
+    val len = n min chstr.length
+    val buf = stackalloc[nc.chtype](len.toUInt)
+
+    for (i <- 0 until len)
+      buf(i) = chstr(i).toUInt
+
+    nc.mvaddchnstr(y, x, buf, len)
+  }
+
 }

@@ -37,6 +37,13 @@ int ncurses_mvvline(int y, int x, chtype ch, int n) { return mvvline(y, x, ch, n
 int ncurses_border(chtype ls, chtype rs, chtype ts, chtype bs, chtype tl, chtype tr, chtype bl, chtype br) { return border(ls, rs, ts, bs, tl, tr, bl, br); }
 int ncurses_mvwhline(WINDOW *win, int y, int x, chtype ch, int n) { return mvwhline(win, y, x, ch, n); }
 int ncurses_mvwvline(WINDOW *win, int y, int x, chtype ch, int n) { return mvwvline(win, y, x, ch, n); }
+int ncurses_addchstr(const chtype *chstr) { return addchstr(chstr); }
+int ncurses_addchnstr(const chtype *chstr, int n) { return addchnstr(chstr, n); }
+int ncurses_waddchstr(WINDOW *win, const chtype *chstr) { return waddchstr(win, chstr); }
+int ncurses_mvaddchstr(int y, int x, const chtype *chstr) { return mvaddchstr(y, x, chstr); }
+int ncurses_mvaddchnstr(int y, int x, const chtype *chstr, int n) { return mvaddchnstr(y, x, chstr, n); }
+int ncurses_mvwaddchstr(WINDOW *win, int y, int x, const chtype *chstr) { return mvwaddchstr(win, y, x, chstr); }
+int ncurses_mvwaddchnstr(WINDOW *win, int y, int x, const chtype *chstr, int n) { return mvwaddchnstr(win, y, x, chstr, n); }
 
 int ncurses_KEY_DOWN() { return KEY_DOWN; }
 int ncurses_KEY_UP() { return KEY_UP; }

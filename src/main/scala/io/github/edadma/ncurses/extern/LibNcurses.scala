@@ -100,6 +100,7 @@ object LibNcurses {
   def panel_hidden(pan: PANEL): CBool                                                = extern
   def set_panel_userptr(pan: PANEL, ptr: Ptr[Byte]): CInt                            = extern
   def panel_userptr(pan: PANEL): Ptr[Byte]                                           = extern
+  def waddchnstr(win: WINDOW, chstr: Ptr[chtype], n: CInt): CInt                     = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern
@@ -388,6 +389,20 @@ object LibNcurses {
   @name("ncurses_border")
   def border(ls: chtype, rs: chtype, ts: chtype, bs: chtype, tl: chtype, tr: chtype, bl: chtype, br: chtype): CInt =
     extern
+  @name("ncurses_addchstr")
+  def addchstr(chstr: Ptr[chtype]): CInt = extern
+  @name("ncurses_addchnstr")
+  def addchnstr(chstr: Ptr[chtype], n: CInt): CInt = extern
+  @name("ncurses_waddchstr")
+  def waddchstr(win: WINDOW, chstr: Ptr[chtype]): CInt = extern
+  @name("ncurses_mvaddchstr")
+  def mvaddchstr(y: CInt, x: CInt, chstr: Ptr[chtype]): CInt = extern
+  @name("ncurses_mvaddchnstr")
+  def mvaddchnstr(y: CInt, x: CInt, chstr: Ptr[chtype], n: CInt): CInt = extern
+  @name("ncurses_mvwaddchstr")
+  def mvwaddchstr(win: WINDOW, y: CInt, x: CInt, chstr: Ptr[chtype]): CInt = extern
+  @name("ncurses_mvwaddchnstr")
+  def mvwaddchnstr(win: WINDOW, y: CInt, x: CInt, chstr: Ptr[chtype], n: CInt): CInt = extern
 
 }
 // todo: https://invisible-island.net/ncurses/man/curs_addchstr.3x.html

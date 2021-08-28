@@ -2,11 +2,18 @@
 //
 //object Main extends App {
 //  initscr
-//  addstr("asdf ")
-//  addstr("zxcv ", 2)
-//  addstr(2, 1, "qwer")
-//  addstr(3, 1, "iouy", 2)
+//  move(0, 9)
+//  addstr("90123456789")
 //  getch
+//
+//  val w = newwin(5, 9, 0, 0)
+//
+//  w.addstr("012345678")
+//  w.getch
+//  w.move(0, 4)
+//  w.addch('\n')
+//  w.getch
+//  w.delwin
 //  endwin
 //}
 

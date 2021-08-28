@@ -18,9 +18,7 @@ class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal
 
   def getch: Int = nc.wgetch(win)
 
-  def addstr(str: String): Int = Zone { implicit z =>
-    nc.waddstr(win, toCString(str))
-  }
+  def addstr(str: String): Int = Zone(implicit z => nc.waddstr(win, toCString(str)))
 
   def addstr(str: String, n: Int): Int = Zone(implicit z => nc.waddnstr(win, toCString(str), n))
 
@@ -143,5 +141,49 @@ class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal
   def wenclose(y: Int, x: Int): Boolean = nc.wenclose(win, y, x)
 
   def mvwin(y: Int, x: Int): Int = nc.mvwin(win, y, x)
+
+  def addchstr(chstr: Seq[Int], n: Int): Int = {
+    require(n >= 0, s"addchstr: n should be non-negative: n = $n")
+
+    val len = n min chstr.length
+    val buf = stackalloc[nc.chtype](len.toUInt)
+
+    for (i <- 0 until len)
+      buf(i) = chstr(i).toUInt
+
+    nc.waddchnstr(win, buf, len)
+  }
+
+  def addchstr(chstr: Seq[Int]): Int = {
+    val len = chstr.length
+    val buf = stackalloc[nc.chtype](len.toUInt)
+
+    for (i <- 0 until len)
+      buf(i) = chstr(i).toUInt
+
+    nc.waddchstr(win, buf)
+  }
+
+  def addchstr(y: Int, x: Int, chstr: Seq[Int]): Int = {
+    val len = chstr.length
+    val buf = stackalloc[nc.chtype](len.toUInt)
+
+    for (i <- 0 until len)
+      buf(i) = chstr(i).toUInt
+
+    nc.mvwaddchstr(win, y, x, buf)
+  }
+
+  def addchstr(y: Int, x: Int, chstr: Seq[Int], n: Int): Int = {
+    require(n >= 0, s"addchstr: n should be non-negative: n = $n")
+
+    val len = n min chstr.length
+    val buf = stackalloc[nc.chtype](len.toUInt)
+
+    for (i <- 0 until len)
+      buf(i) = chstr(i).toUInt
+
+    nc.mvwaddchnstr(win, y, x, buf, len)
+  }
 
 }
