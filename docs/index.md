@@ -33,7 +33,15 @@ sudo apt install libncurses-dev
 
 Include the following in your `build.sbt`:
 
-```scala
+Include the following in your `project/plugins.sbt`:
+
+```sbt
+addSbtPlugin("com.codecommit" % "sbt-github-packages" % "0.5.2")
+```
+
+Include the following in your `build.sbt`:
+
+```sbt
 resolvers += Resolver.githubPackages("edadma")
 
 libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.3"
