@@ -1,6 +1,6 @@
 name := "ncurses"
 
-version := "0.2.4"
+version := "0.2.5"
 
 description := "Scala Native bindings for the GNU Ncurses C library"
 

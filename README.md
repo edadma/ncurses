@@ -30,7 +30,7 @@ Include the following in your `build.sbt`:
 ```sbt
 resolvers += Resolver.githubPackages("edadma")
 
-libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.4"
+libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.5"
 ```
 
 Use the following `import` in your code:
