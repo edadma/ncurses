@@ -1,8 +1,8 @@
-package io.github.edadma.ncurses.facade
+package io.github.edadma.ncurses
 
 import io.github.edadma.ncurses.extern.{LibNcurses => nc}
 
-class Panel private[facade] (private[facade] val pan: nc.PANEL) extends AnyVal {
+class Panel private[ncurses] (private[ncurses] val pan: nc.PANEL) extends AnyVal {
 
   def panel_above: Panel = new Panel(nc.panel_above(pan))
 

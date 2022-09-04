@@ -1,11 +1,12 @@
-package io.github.edadma.ncurses.facade
+package io.github.edadma.ncurses
 
 import io.github.edadma.ncurses.extern.{LibNcurses => nc}
+import io.github.edadma.ncurses.varargs
 
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
 
-class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal {
+class Window private[ncurses] (private[ncurses] val win: nc.WINDOW) extends AnyVal {
 
   def printw(fmt: String, args: Any*): Int = Zone(implicit z => nc.vw_printw(win, toCString(fmt), varargs(args)))
 
@@ -81,24 +82,24 @@ class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal
   }
 
   def getbegyx: (Int, Int) = {
-    val y = stackalloc[CInt]
-    val x = stackalloc[CInt]
+    val y = stackalloc[CInt]()
+    val x = stackalloc[CInt]()
 
     nc.getbegyx(win, y, x)
     (!y, !x)
   }
 
   def getmaxyx: (Int, Int) = {
-    val y = stackalloc[CInt]
-    val x = stackalloc[CInt]
+    val y = stackalloc[CInt]()
+    val x = stackalloc[CInt]()
 
     nc.getmaxyx(win, y, x)
     (!y, !x)
   }
 
   def getyx: (Int, Int) = {
-    val y = stackalloc[CInt]
-    val x = stackalloc[CInt]
+    val y = stackalloc[CInt]()
+    val x = stackalloc[CInt]()
 
     nc.getyx(win, y, x)
     (!y, !x)
@@ -120,8 +121,8 @@ class Window private[facade] (private[facade] val win: nc.WINDOW) extends AnyVal
     nc.wborder(win, ls.toUInt, rs.toUInt, ts.toUInt, bs.toUInt, tl.toUInt, tr.toUInt, bl.toUInt, br.toUInt)
 
   def mouse_trafo(y: Int, x: Int, to_screen: Boolean): (Boolean, Int, Int) = {
-    val py = stackalloc[CInt]
-    val px = stackalloc[CInt]
+    val py = stackalloc[CInt]()
+    val px = stackalloc[CInt]()
 
     !py = y
     !px = x

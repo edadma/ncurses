@@ -1,10 +1,10 @@
 name := "ncurses"
 
-version := "0.2.3"
+version := "0.2.4"
 
 description := "Scala Native bindings for the GNU Ncurses C library"
 
-scalaVersion := "2.13.6"
+scalaVersion := "3.1.3"
 
 enablePlugins(ScalaNativePlugin)
 
@@ -14,12 +14,14 @@ nativeMode := "debug"
 
 nativeLinkingOptions := Seq(s"-L/${baseDirectory.value}/native-lib")
 
-scalacOptions ++= Seq("-deprecation",
-                      "-feature",
-                      "-unchecked",
-                      "-language:postfixOps",
-                      "-language:implicitConversions",
-                      "-language:existentials")
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-feature",
+  "-unchecked",
+  "-language:postfixOps",
+  "-language:implicitConversions",
+  "-language:existentials",
+)
 
 organization := "io.github.edadma"
 

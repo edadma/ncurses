@@ -8,7 +8,7 @@ Overview
 
 The goal of this project is to provide an easy-to-use Scala Native facade for the entire Ncurses C library, including the [panel](https://invisible-island.net/ncurses/man/panel.3x.html), [menu](https://invisible-island.net/ncurses/man/menu.3x.html) and [form](https://invisible-island.net/ncurses/man/form.3x.html) extension libraries, which are bundled with the main *ncurses* library. This project is active and will be kept up-to-date with respect to new Scala Native releases.
 
-The more "programmer friendly" part of this library is found in the `io.github.edadma.ncurses.facade` package.  That's the only package you need to import from, as seen in the examples below.  The other package in the library is `io.github.edadma.ncurses.extern` which provides for interaction with the Ncurses C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `io.github.edadma.ncurses.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Consequently, you never have to worry about memory allocation or type conversions.
+The more "programmer friendly" part of this library is found in the `io.github.edadma.ncurses` package.  That's the only package you need to import from, as seen in the examples below.  The other package in the library is `io.github.edadma.ncurses.extern` which provides for interaction with the Ncurses C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `io.github.edadma.ncurses` package that use `unsafe` types in their parameter or return types, making it a pure Scala   Consequently, you never have to worry about memory allocation or type conversions.
 
 ### Efficient screen output
 
@@ -36,7 +36,7 @@ Include the following in your `build.sbt`:
 Include the following in your `project/plugins.sbt`:
 
 ```sbt
-addSbtPlugin("com.codecommit" % "sbt-github-packages" % "0.5.2")
+addSbtPlugin("com.codecommit" % "sbt-github-packages" % "0.5.3")
 ```
 
 Include the following in your `build.sbt`:
@@ -44,13 +44,13 @@ Include the following in your `build.sbt`:
 ```sbt
 resolvers += Resolver.githubPackages("edadma")
 
-libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.3"
+libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.4"
 ```
 
 Use the following `import` in your code:
 
 ```scala
-import io.github.edadma.ncurses.facade._
+import io.github.edadma.ncurses._
 ```
 
 Examples
@@ -63,7 +63,7 @@ The following examples are taken from the well-known [NCURSES Programming HOWTO]
 The obligatory "Hello World" example.
 
 ```scala
-import io.github.edadma.ncurses.facade._
+import io.github.edadma.ncurses._
 
 object Main extends App {
   initscr                     /* Start curses mode */
@@ -79,7 +79,7 @@ object Main extends App {
 Basic keyboard input example.
 
 ```scala
-import io.github.edadma.ncurses.facade._
+import io.github.edadma.ncurses._
 
 object Main extends App {
 
@@ -114,7 +114,7 @@ object Main extends App {
 Basic mouse input example.
 
 ```scala
-import io.github.edadma.ncurses.facade._
+import io.github.edadma.ncurses._
 
 object Main extends App {
   val WIDTH  = 30
@@ -215,7 +215,7 @@ object Main extends App {
 Basic panels (with colors) example.
 
 ```scala
-import io.github.edadma.ncurses.facade._
+import io.github.edadma.ncurses._
 
 object Main extends App {
 

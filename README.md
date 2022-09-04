@@ -22,7 +22,7 @@ sudo apt install libncurses-dev
 Include the following in your `project/plugins.sbt`:
 
 ```sbt
-addSbtPlugin("com.codecommit" % "sbt-github-packages" % "0.5.2")
+addSbtPlugin("com.codecommit" % "sbt-github-packages" % "0.5.3")
 ```
 
 Include the following in your `build.sbt`:
@@ -30,20 +30,20 @@ Include the following in your `build.sbt`:
 ```sbt
 resolvers += Resolver.githubPackages("edadma")
 
-libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.3"
+libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.4"
 ```
 
 Use the following `import` in your code:
 
 ```scala
-import io.github.edadma.ncurses.facade._
+import io.github.edadma.ncurses._
 ```
 
 The obligatory "Hello World" example
 ------------------------------------
 
 ```scala
-import io.github.edadma.ncurses.facade._
+import io.github.edadma.ncurses._
 
 object Main extends App {
   initscr                     /* Start curses mode */
