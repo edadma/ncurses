@@ -1,10 +1,10 @@
 name := "ncurses"
 
-version := "0.2.5"
+version := "0.2.6"
 
 description := "Scala Native bindings for the GNU Ncurses C library"
 
-scalaVersion := "3.1.3"
+scalaVersion := "3.2.0"
 
 enablePlugins(ScalaNativePlugin)
 
@@ -55,20 +55,3 @@ homepage := Some(url("https://github.com/edadma/" + name.value))
 publishMavenStyle := true
 
 Test / publishArtifact := false
-
-pomIncludeRepository := { _ =>
-  false
-}
-
-pomExtra :=
-  <scm>
-    <url>git@github.com:edadma/{name.value}.git</url>
-    <connection>scm:git:git@github.com:edadma/{name.value}.git</connection>
-  </scm>
-    <developers>
-      <developer>
-        <id>edadma</id>
-        <name>Edward A Maxedon, Sr</name>
-        <url>https://github.com/edadma</url>
-      </developer>
-    </developers>

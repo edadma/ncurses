@@ -18,15 +18,15 @@
 //}
 
 //ex 1
-//import io.github.edadma.ncurses._
-//
-//object Main extends App {
-//  initscr /* Start curses mode */
-//  printw("Hello World !!!") /* Print Hello World */
-//  refresh /* Print it on to the real screen */
-//  getch /* Wait for user input */
-//  endwin /* End curses mode */
-//}
+import io.github.edadma.ncurses._
+
+object Main extends App {
+  initscr /* Start curses mode */
+  printw("Hello World !!!") /* Print Hello World */
+  refresh /* Print it on to the real screen */
+  getch /* Wait for user input */
+  endwin /* End curses mode */
+}
 
 //ex 4
 //import io.github.edadma.ncurses._

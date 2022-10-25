@@ -6,7 +6,7 @@ import io.github.edadma.ncurses.varargs
 import scala.scalanative.unsafe._
 import scala.scalanative.unsigned._
 
-class Window private[ncurses] (private[ncurses] val win: nc.WINDOW) extends AnyVal {
+class Window private[ncurses] (val win: nc.WINDOW) extends AnyVal {
 
   def printw(fmt: String, args: Any*): Int = Zone(implicit z => nc.vw_printw(win, toCString(fmt), varargs(args)))
 
