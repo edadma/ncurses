@@ -44,7 +44,7 @@ Include the following in your `build.sbt`:
 ```sbt
 resolvers += Resolver.githubPackages("edadma")
 
-libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.5"
+libraryDependencies += "io.github.edadma" %%% "ncurses" % "0.2.6"
 ```
 
 Use the following `import` in your code:
