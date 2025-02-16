@@ -20,7 +20,7 @@
 //ex 1
 import io.github.edadma.ncurses._
 
-object Main extends App {
+@main def main(): Unit = {
   initscr /* Start curses mode */
   printw("Hello World !!!") /* Print Hello World */
   refresh /* Print it on to the real screen */

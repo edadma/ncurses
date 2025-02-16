@@ -6,101 +6,103 @@ import scala.scalanative.unsafe._
 @extern
 object LibNcurses {
 
-  type WINDOW  = Ptr[Byte]
-  type PANEL   = Ptr[Byte]
-  type chtype  = CUnsignedInt
-  type attr_t  = chtype
+  type WINDOW = Ptr[Byte]
+  type PANEL = Ptr[Byte]
+  type chtype = CUnsignedInt
+  type attr_t = chtype
   type mmask_t = CUnsignedInt
-  type MEVENT  = CStruct5[CShort, CInt, CInt, CInt, CUnsignedInt]
+  type MEVENT = CStruct5[CShort, CInt, CInt, CInt, CUnsignedInt]
 
-  val stdscr: WINDOW = extern
-  val LINES: CInt    = extern
-  val COLS: CInt     = extern
+  var stdscr: WINDOW = extern
+  var LINES: CInt = extern
+  var COLS: CInt = extern
 
-  def initscr: WINDOW                                                                 = extern
-  def cbreak: CInt                                                                    = extern
-  def nocbreak: CInt                                                                  = extern
-  def raw: CInt                                                                       = extern
-  def noraw: CInt                                                                     = extern
-  def echo: CInt                                                                      = extern
-  def noecho: CInt                                                                    = extern
-  def endwin: CInt                                                                    = extern
-  def start_color: CInt                                                               = extern
-  def wgetch(win: WINDOW): CInt                                                       = extern
-  def vw_printw(win: WINDOW, fmt: CString, args: CVarArgList): CInt                   = extern
-  def wmove(win: WINDOW, y: CInt, x: CInt): CInt                                      = extern
-  def waddnstr(win: WINDOW, str: CString, n: CInt): CInt                              = extern
-  def waddch(win: WINDOW, ch: chtype): CInt                                           = extern
-  def mvaddch(x: CInt, n: CInt, ch: chtype): CInt                                     = extern
-  def mvwaddch(win: WINDOW, x: CInt, n: CInt, ch: chtype): CInt                       = extern
-  def echochar(ch: chtype): CInt                                                      = extern
-  def wechochar(win: WINDOW, ch: chtype): CInt                                        = extern
-  def keypad(win: WINDOW, bf: CBool): CInt                                            = extern
-  def wclrtoeol(win: WINDOW): CInt                                                    = extern
-  def wclrtobot(win: WINDOW): CInt                                                    = extern
-  def newwin(nlines: CInt, ncols: CInt, begin_y: CInt, begin_x: CInt): WINDOW         = extern
-  def delwin(win: WINDOW): CInt                                                       = extern
-  def wclear(win: WINDOW): CInt                                                       = extern
-  def wbkgdset(win: WINDOW, ch: chtype): Unit                                         = extern
-  def wbkgd(win: WINDOW, ch: chtype): Unit                                            = extern
-  def scrollok(win: WINDOW, bf: CBool): CInt                                          = extern
-  def wscrl(win: WINDOW, n: CInt): CInt                                               = extern
-  def keyname(c: CInt): CString                                                       = extern
-  def nodelay(win: WINDOW, bf: CBool): Unit                                           = extern
-  def wresize(win: WINDOW, lines: CInt, columns: CInt): Unit                          = extern
-  def new_panel(win: WINDOW): PANEL                                                   = extern
-  def panel_above(panel: PANEL): PANEL                                                = extern
-  def panel_below(panel: PANEL): PANEL                                                = extern
-  def update_panels(): Unit                                                           = extern
-  def doupdate: CInt                                                                  = extern
-  def redrawwin(win: WINDOW): CInt                                                    = extern
-  def wredrawln(win: WINDOW, beg_line: CInt, num_lines: CInt): CInt                   = extern
-  def init_pair(pair: CShort, f: CShort, b: CShort): CInt                             = extern
-  def init_color(color: CShort, r: CShort, g: CShort, b: CShort): CInt                = extern
-  def curs_set(visibility: CInt): CInt                                                = extern
-  def wgetnstr(win: WINDOW, str: CString, n: CInt): CInt                              = extern
+  def initscr: WINDOW = extern
+  def cbreak: CInt = extern
+  def nocbreak: CInt = extern
+  def raw: CInt = extern
+  def noraw: CInt = extern
+  def echo: CInt = extern
+  def noecho: CInt = extern
+  def endwin: CInt = extern
+  def start_color: CInt = extern
+  def wgetch(win: WINDOW): CInt = extern
+  def vw_printw(win: WINDOW, fmt: CString, args: CVarArgList): CInt = extern
+  def wmove(win: WINDOW, y: CInt, x: CInt): CInt = extern
+  def waddnstr(win: WINDOW, str: CString, n: CInt): CInt = extern
+  def waddch(win: WINDOW, ch: chtype): CInt = extern
+  def mvaddch(x: CInt, n: CInt, ch: chtype): CInt = extern
+  def mvwaddch(win: WINDOW, x: CInt, n: CInt, ch: chtype): CInt = extern
+  def echochar(ch: chtype): CInt = extern
+  def wechochar(win: WINDOW, ch: chtype): CInt = extern
+  def keypad(win: WINDOW, bf: CBool): CInt = extern
+  def wclrtoeol(win: WINDOW): CInt = extern
+  def wclrtobot(win: WINDOW): CInt = extern
+  def newwin(nlines: CInt, ncols: CInt, begin_y: CInt, begin_x: CInt): WINDOW = extern
+  def delwin(win: WINDOW): CInt = extern
+  def wclear(win: WINDOW): CInt = extern
+  def wbkgdset(win: WINDOW, ch: chtype): Unit = extern
+  def wbkgd(win: WINDOW, ch: chtype): Unit = extern
+  def scrollok(win: WINDOW, bf: CBool): CInt = extern
+  def wscrl(win: WINDOW, n: CInt): CInt = extern
+  def keyname(c: CInt): CString = extern
+  def nodelay(win: WINDOW, bf: CBool): Unit = extern
+  def wresize(win: WINDOW, lines: CInt, columns: CInt): Unit = extern
+  def new_panel(win: WINDOW): PANEL = extern
+  def panel_above(panel: PANEL): PANEL = extern
+  def panel_below(panel: PANEL): PANEL = extern
+  def update_panels(): Unit = extern
+  def doupdate: CInt = extern
+  def redrawwin(win: WINDOW): CInt = extern
+  def wredrawln(win: WINDOW, beg_line: CInt, num_lines: CInt): CInt = extern
+  def init_pair(pair: CShort, f: CShort, b: CShort): CInt = extern
+  def init_color(color: CShort, r: CShort, g: CShort, b: CShort): CInt = extern
+  def curs_set(visibility: CInt): CInt = extern
+  def wgetnstr(win: WINDOW, str: CString, n: CInt): CInt = extern
   def wchgat(win: WINDOW, n: CInt, attr: attr_t, pair: CShort, opts: Ptr[Byte]): CInt = extern
-  def wrefresh(win: WINDOW): CInt                                                     = extern
-  def wborder(win: WINDOW,
-              ls: chtype,
-              rs: chtype,
-              ts: chtype,
-              bs: chtype,
-              tl: chtype,
-              tr: chtype,
-              bl: chtype,
-              br: chtype): CInt                                                      = extern
-  def mousemask(newmask: mmask_t, oldmask: Ptr[mmask_t]): mmask_t                    = extern
-  def mouseinterval(interval: CInt): CInt                                            = extern
-  def getmouse(event: Ptr[MEVENT]): CInt                                             = extern
-  def has_colors: CBool                                                              = extern
-  def mouse_trafo(y: Ptr[CInt], x: Ptr[CInt], to_screen: CBool): CBool               = extern
+  def wrefresh(win: WINDOW): CInt = extern
+  def wborder(
+      win: WINDOW,
+      ls: chtype,
+      rs: chtype,
+      ts: chtype,
+      bs: chtype,
+      tl: chtype,
+      tr: chtype,
+      bl: chtype,
+      br: chtype,
+  ): CInt = extern
+  def mousemask(newmask: mmask_t, oldmask: Ptr[mmask_t]): mmask_t = extern
+  def mouseinterval(interval: CInt): CInt = extern
+  def getmouse(event: Ptr[MEVENT]): CInt = extern
+  def has_colors: CBool = extern
+  def mouse_trafo(y: Ptr[CInt], x: Ptr[CInt], to_screen: CBool): CBool = extern
   def wmouse_trafo(win: WINDOW, y: Ptr[CInt], x: Ptr[CInt], to_screen: CBool): CBool = extern
-  def def_prog_mode: CInt                                                            = extern
-  def reset_prog_mode: CInt                                                          = extern
-  def show_panel(pan: PANEL): CInt                                                   = extern
-  def hide_panel(pan: PANEL): CInt                                                   = extern
-  def top_panel(pan: PANEL): CInt                                                    = extern
-  def bottom_panel(pan: PANEL): CInt                                                 = extern
-  def del_panel(pan: PANEL): CInt                                                    = extern
-  def wnoutrefresh(win: WINDOW): CInt                                                = extern
-  def werase(win: WINDOW): CInt                                                      = extern
-  def beep: CInt                                                                     = extern
-  def flash: CInt                                                                    = extern
-  def whline(win: WINDOW, ch: chtype, n: CInt): CInt                                 = extern
-  def wvline(win: WINDOW, ch: chtype, n: CInt): CInt                                 = extern
-  def wenclose(win: WINDOW, y: CInt, x: CInt): CBool                                 = extern
-  def has_mouse: CBool                                                               = extern
-  def mvwin(win: WINDOW, y: CInt, x: CInt): CInt                                     = extern
-  def use_default_colors: CInt                                                       = extern
-  def assume_default_colors(fg: CInt, bg: CInt): CInt                                = extern
-  def panel_window(pan: PANEL): WINDOW                                               = extern
-  def replace_panel(pan: PANEL, win: WINDOW): CInt                                   = extern
-  def move_panel(pan: PANEL, starty: CInt, startx: CInt): CInt                       = extern
-  def panel_hidden(pan: PANEL): CBool                                                = extern
-  def set_panel_userptr(pan: PANEL, ptr: Ptr[Byte]): CInt                            = extern
-  def panel_userptr(pan: PANEL): Ptr[Byte]                                           = extern
-  def waddchnstr(win: WINDOW, chstr: Ptr[chtype], n: CInt): CInt                     = extern
+  def def_prog_mode: CInt = extern
+  def reset_prog_mode: CInt = extern
+  def show_panel(pan: PANEL): CInt = extern
+  def hide_panel(pan: PANEL): CInt = extern
+  def top_panel(pan: PANEL): CInt = extern
+  def bottom_panel(pan: PANEL): CInt = extern
+  def del_panel(pan: PANEL): CInt = extern
+  def wnoutrefresh(win: WINDOW): CInt = extern
+  def werase(win: WINDOW): CInt = extern
+  def beep: CInt = extern
+  def flash: CInt = extern
+  def whline(win: WINDOW, ch: chtype, n: CInt): CInt = extern
+  def wvline(win: WINDOW, ch: chtype, n: CInt): CInt = extern
+  def wenclose(win: WINDOW, y: CInt, x: CInt): CBool = extern
+  def has_mouse: CBool = extern
+  def mvwin(win: WINDOW, y: CInt, x: CInt): CInt = extern
+  def use_default_colors: CInt = extern
+  def assume_default_colors(fg: CInt, bg: CInt): CInt = extern
+  def panel_window(pan: PANEL): WINDOW = extern
+  def replace_panel(pan: PANEL, win: WINDOW): CInt = extern
+  def move_panel(pan: PANEL, starty: CInt, startx: CInt): CInt = extern
+  def panel_hidden(pan: PANEL): CBool = extern
+  def set_panel_userptr(pan: PANEL, ptr: Ptr[Byte]): CInt = extern
+  def panel_userptr(pan: PANEL): Ptr[Byte] = extern
+  def waddchnstr(win: WINDOW, chstr: Ptr[chtype], n: CInt): CInt = extern
 
   @name("ncurses_refresh")
   def refresh: CInt = extern

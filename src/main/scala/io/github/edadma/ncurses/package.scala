@@ -115,7 +115,7 @@ lazy val COLOR_MAGENTA: Int = nc.COLOR_MAGENTA
 lazy val COLOR_CYAN: Int = nc.COLOR_CYAN
 lazy val COLOR_WHITE: Int = nc.COLOR_WHITE
 
-private[ncurses] def varargs(args: Seq[Any])(implicit z: Zone) =
+private[ncurses] def varargs(args: Seq[Any]) = Zone {
   toCVarArgList(
     args
       map {
@@ -125,6 +125,7 @@ private[ncurses] def varargs(args: Seq[Any])(implicit z: Zone) =
         case n: Double => CVarArg.materialize(n)
       },
   )
+}
 
 def initscr: Window = new Window(nc.initscr)
 
@@ -148,13 +149,13 @@ def bkgd(ch: Int): Unit = nc.bkgd(ch.toUInt)
 
 def start_color: Int = nc.start_color
 
-def addstr(s: String): Int = Zone(implicit z => nc.addstr(toCString(s)))
+def addstr(s: String): Int = Zone { nc.addstr(toCString(s)) }
 
-def addstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvaddstr(y, x, toCString(str)))
+def addstr(y: Int, x: Int, str: String): Int = Zone { nc.mvaddstr(y, x, toCString(str)) }
 
-def addstr(str: String, n: Int): Int = Zone(implicit z => nc.addnstr(toCString(str), n))
+def addstr(str: String, n: Int): Int = Zone { nc.addnstr(toCString(str), n) }
 
-def addstr(y: Int, x: Int, str: String, n: Int): Int = Zone(implicit z => nc.mvaddnstr(y, x, toCString(str), n))
+def addstr(y: Int, x: Int, str: String, n: Int): Int = Zone { nc.mvaddnstr(y, x, toCString(str), n) }
 
 def addch(ch: Int): Int = nc.addch(ch.toUInt)
 
@@ -170,11 +171,11 @@ def move(y: Int, x: Int): Int = nc.move(y, x)
 
 def scrl(n: Int): Int = nc.scrl(n)
 
-def printw(fmt: String, args: Any*): Int = stdscr.printw(fmt, args: _*)
+def printw(fmt: String, args: Any*): Int = stdscr.printw(fmt, args*)
 
 def printw(y: Int, x: Int, fmt: String, args: Any*): Int = {
   move(y, x)
-  printw(fmt, args: _*)
+  printw(fmt, args*)
 }
 
 def newwin(nlines: Int, ncols: Int, begin_y: Int, begin_x: Int): Window =

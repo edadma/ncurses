@@ -8,25 +8,25 @@ import scala.scalanative.unsigned._
 
 class Window private[ncurses] (val win: nc.WINDOW) extends AnyVal {
 
-  def printw(fmt: String, args: Any*): Int = Zone(implicit z => nc.vw_printw(win, toCString(fmt), varargs(args)))
+  def printw(fmt: String, args: Any*): Int = Zone { nc.vw_printw(win, toCString(fmt), varargs(args)) }
 
   def move(y: Int, x: Int): Int = nc.wmove(win, y, x)
 
   def printw(y: Int, x: Int, fmt: String, args: Any*): Int = {
     move(y, x)
-    printw(fmt, args: _*)
+    printw(fmt, args*)
   }
 
   def getch: Int = nc.wgetch(win)
 
-  def addstr(str: String): Int = Zone(implicit z => nc.waddstr(win, toCString(str)))
+  def addstr(str: String): Int = Zone { nc.waddstr(win, toCString(str)) }
 
-  def addstr(str: String, n: Int): Int = Zone(implicit z => nc.waddnstr(win, toCString(str), n))
+  def addstr(str: String, n: Int): Int = Zone { nc.waddnstr(win, toCString(str), n) }
 
-  def addstr(y: Int, x: Int, str: String): Int = Zone(implicit z => nc.mvwaddstr(win, y, x, toCString(str)))
+  def addstr(y: Int, x: Int, str: String): Int = Zone { nc.mvwaddstr(win, y, x, toCString(str)) }
 
   def addstr(y: Int, x: Int, str: String, n: Int): Int =
-    Zone(implicit z => nc.mvwaddnstr(win, y, x, toCString(str), n))
+    Zone { nc.mvwaddnstr(win, y, x, toCString(str), n) }
 
   def addch(ch: Int): Int = nc.waddch(win, ch.toUInt)
 

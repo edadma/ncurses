@@ -4,15 +4,9 @@ version := "0.2.6"
 
 description := "Scala Native bindings for the GNU Ncurses C library"
 
-scalaVersion := "3.2.0"
+scalaVersion := "3.6.3"
 
 enablePlugins(ScalaNativePlugin)
-
-nativeLinkStubs := true
-
-nativeMode := "debug"
-
-nativeLinkingOptions := Seq(s"-L/${baseDirectory.value}/native-lib")
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -25,17 +19,7 @@ scalacOptions ++= Seq(
 
 organization := "io.github.edadma"
 
-githubOwner := "edadma"
-
-githubRepository := name.value
-
 Global / onChangedBuildSource := ReloadOnSourceChanges
-
-resolvers += Resolver.githubPackages("edadma")
-
-Compile / mainClass := Some("Main")
-
-//nativeLinkingOptions := Seq("-v")
 
 licenses := Seq("ISC" -> url("https://opensource.org/licenses/ISC"))
 
